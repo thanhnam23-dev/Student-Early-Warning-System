@@ -1,0 +1,422 @@
+{
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "singlePrediction": "Single Prediction",
+    "batchPrediction": "Batch Prediction",
+    "history": "Prediction History",
+    "about": "About the Project",
+    "settings": "Settings"
+  },
+  "header": {
+    "earlyWarningSystem": "Student Early Warning System",
+    "mockMode": "Mock Mode",
+    "mockPrediction": "Mock Prediction Active"
+  },
+  "footer": {
+    "rights": "All Rights Reserved."
+  },
+  "general": {
+    "back": "Back",
+    "next": "Next Step",
+    "cancel": "Cancel",
+    "save": "Save Changes",
+    "loading": "Loading...",
+    "viewDetails": "View Details",
+    "export": "Export Excel",
+    "resetFilters": "Reset Filters",
+    "confirm": "Confirm",
+    "search": "Search Student",
+    "select": "Select Option",
+    "yes": "Yes",
+    "no": "No",
+    "close": "Close",
+    "actions": "Actions",
+    "success": "Success",
+    "warning": "Warning",
+    "error": "Error"
+  },
+  "dashboard": {
+    "title": "Advisor Command Center",
+    "description": "Monitor dynamic student demographics, academic warning rates, and recent algorithmic prediction trends.",
+    "last6Months": "Last 6 months",
+    "vsLastMonth": "vs last month",
+    "statsSection": "Overview Statistics",
+    "analyticsSection": "Analytics",
+    "latestSection": "Latest Predictions",
+    "activitySection": "Activity & Records",
+    "noPredictions": "No recent predictions available.",
+    "totalPredictions": "Total Predictions",
+    "successRate": "Predicted Graduation Rate",
+    "graduates": "Predicted Graduates",
+    "dropouts": "Predicted Attritions",
+    "enrolled": "Predicted Enrolled",
+    "avgConfidence": "Average Model Confidence",
+    "warningRate": "Warning/At-Risk Rate",
+    "activeDistribution": "Academic Outcome Distribution",
+    "activityFeed": "Advisor Logs & Activity Feed",
+    "recentPredictions": "Recent Prediction Audits",
+    "noActivity": "No actions have been logged yet.",
+    "latestSingle": "Latest Single Evaluation",
+    "latestBatch": "Latest Batch Process",
+    "reviewReport": "Review Full Report",
+    "inspectBatch": "Inspect Batch History",
+    "noSingle": "No single student predictions logged yet.",
+    "noBatch": "No batch runs loaded yet.",
+    "batchLog": "Batch Log"
+  },
+  "singlePrediction": {
+    "title": "Single Student Profiler",
+    "description": "Execute AI-powered early warning calculations by manually entering student parameters across a 5-step wizard.",
+    "steps": {
+      "step1": "Identification",
+      "step1Desc": "Demographic credentials",
+      "step2": "Personal & Entry",
+      "step2Desc": "Personal details & enrollment",
+      "step3": "Family & Finance",
+      "step3Desc": "Family background & finance",
+      "step4": "Academic & Economy",
+      "step4Desc": "Grades & macroeconomics",
+      "step5": "Review & Predict",
+      "step5Desc": "Final validation & trigger"
+    },
+    "sections": {
+      "identification": "Student Identification",
+      "personal": "Personal & Entry Parameters",
+      "family": "Family Background & Financial Status",
+      "financial": "Financial & Assistance Indicators",
+      "academic": "Academic Units & Macroeconomics",
+      "review": "Review Input Parameters"
+    },
+    "fields": {
+      "studentCode": "Student Code",
+      "studentCodePlaceholder": "e.g., B20DCCN001",
+      "studentName": "Full Name",
+      "studentNamePlaceholder": "e.g., Nguyen Van A",
+      "className": "Class Name",
+      "classNamePlaceholder": "e.g., D20CNPM01",
+      "faculty": "Faculty",
+      "facultyPlaceholder": "e.g., Information Technology",
+      "maritalStatus": "Marital Status",
+      "ageAtEnrollment": "Age at Enrollment",
+      "gender": "Gender",
+      "nationality": "Nationality",
+      "international": "International Student Status",
+      "applicationMode": "Application Mode",
+      "applicationOrder": "Application Order (Preference)",
+      "course": "Enrolled Course/Major",
+      "daytimeEvening": "Shift (Daytime/Evening)",
+      "previousQualification": "Previous Qualification Type",
+      "previousQualificationGrade": "Previous Qualification Grade",
+      "admissionGrade": "College Admission Grade",
+      "motherQualification": "Mother's Qualification",
+      "fatherQualification": "Father's Qualification",
+      "motherOccupation": "Mother's Occupation",
+      "fatherOccupation": "Father's Occupation",
+      "scholarshipHolder": "Scholarship Holder",
+      "debtor": "Debtor (Tuition Debt)",
+      "tuitionFeesUpToDate": "Tuition Paid (Up to Date)",
+      "displaced": "Displaced Status",
+      "educationalSpecialNeeds": "Special Educational Needs",
+      "sem1Credited": "Semester 1 Credited Units",
+      "sem1Enrolled": "Semester 1 Enrolled Units",
+      "sem1Evaluations": "Semester 1 Evaluated Units",
+      "sem1Approved": "Semester 1 Approved Units",
+      "sem1Grade": "Semester 1 Grade Average",
+      "sem1WithoutEvaluations": "Semester 1 Units Without Evaluations",
+      "sem2Credited": "Semester 2 Credited Units",
+      "sem2Enrolled": "Semester 2 Enrolled Units",
+      "sem2Evaluations": "Semester 2 Evaluated Units",
+      "sem2Approved": "Semester 2 Approved Units",
+      "sem2Grade": "Semester 2 Grade Average",
+      "sem2WithoutEvaluations": "Semester 2 Units Without Evaluations",
+      "unemploymentRate": "Macro Unemployment Rate (%)",
+      "inflationRate": "Macro Inflation Rate (%)",
+      "gdp": "Macro GDP Growth (%)"
+    },
+    "errors": {
+      "studentCode": "Student Code is required",
+      "studentName": "Student Name is required",
+      "className": "Class Name is required",
+      "faculty": "Faculty is required",
+      "ageAtEnrollment": "Age must be between 10 and 100",
+      "previousQualificationGrade": "Previous grade must be a positive number",
+      "admissionGrade": "Admission grade must be a positive number"
+    },
+    "triggerPredict": "Trigger AI Prediction",
+    "predictionComplete": "AI Prediction Complete",
+    "closeDialog": "Close Report",
+    "identificationNote": "These identifying fields are kept locally for layout display and will NOT be forwarded to the machine learning model."
+  },
+  "batchPrediction": {
+    "title": "Spreadsheet Batch Processor",
+    "description": "Analyze warning indicators for entire classes or cohorts by uploading Excel spreadsheets.",
+    "uploadCard": {
+      "title": "Upload Administrative Spreadsheet",
+      "dragDrop": "Drag and drop student spreadsheet here, or click to browse",
+      "fileFormats": "Supports .xlsx and .xls formats up to 1MB.",
+      "downloadTemplate": "Download Template Excel"
+    },
+    "processing": "Executing batch calculations on AI engine...",
+    "preview": "Spreadsheet Preview & Data Import ({count} rows found)",
+    "results": "Batch Calculation Report ({count} predictions processed)",
+    "exportBtn": "Export Analytical Spreadsheet"
+  },
+  "history": {
+    "title": "Prediction Audits & Log",
+    "description": "Inspect logs of past student warnings, batch spreadsheet calculations, and recommendations.",
+    "filters": {
+      "searchLabel": "Search Student",
+      "searchPlaceholder": "Code, name, class...",
+      "typeLabel": "Prediction Type",
+      "outcomeLabel": "Output Category",
+      "riskLabel": "Risk Level",
+      "allTypes": "All Types",
+      "single": "Single Prediction",
+      "batch": "Batch Prediction",
+      "allOutcomes": "All Outcomes",
+      "allRisks": "All Risks"
+    },
+    "columns": {
+      "sessionId": "Session ID",
+      "dateTime": "Date / Time",
+      "type": "Type",
+      "studentsCount": "Students Count",
+      "summary": "Summary",
+      "actions": "Actions"
+    },
+    "empty": "No Prediction Logs Found",
+    "emptyDesc": "Try adjusting your filter options or run new student predictions.",
+    "batchBreakdown": "Batch Members Prediction Breakdown"
+  },
+  "about": {
+    "title": "About the Project",
+    "description": "Discover the research objectives, datasets, machine learning models, and system architecture of the Student Early Warning System.",
+    "overview": {
+      "title": "Project Overview",
+      "p1": "The AI-powered Student Early Warning System (SEWS) is developed to address the critical challenge of academic dropout in higher education. By analyzing demographic, socio-economic, admission, and semester-level academic performance logs, the system calculates an individual Risk Score for each student. This allows academic advisors and faculty counseling departments to step in with personalized interventions before a student drops out.",
+      "p2": "Rather than a simple predictions machine, the system is designed to provide Explainable AI (XAI) metrics, pinpointing why a student is flagged as high-risk, enabling institutions to deploy precise financial, academic, or counseling support.",
+      "titleObjectives": "Research Objectives",
+      "obj1": "Early identification of student attrition risks.",
+      "obj2": "Explainable student warning factor transparency.",
+      "obj3": "Prescriptive personalized counseling mappings.",
+      "obj4": "Decoupled API integration for scalable school deploys."
+    },
+    "dataset": {
+      "title": "Dataset Profile: UCI Student Attrition",
+      "p1": "The SEWS AI engine utilizes the 'Predict Students' Dropout and Academic Success' dataset, sourced from the UCI Machine Learning Repository (ID: 697). It consists of administrative records collected from a higher education institution in Portugal. It contains 4,424 records with 36 core academic and demographic features.",
+      "records": "Dataset Records",
+      "features": "Core Features"
+    },
+    "algorithms": {
+      "title": "Huấn luyện Algorithms (Ensemble Classifiers)",
+      "rf": "Random Forest",
+      "rfDesc": "Constructs a multitude of decision trees at training time and outputs the mode/mean classification of the individual trees. Highly stable and prevents model overfitting.",
+      "xgb": "XGBoost",
+      "xgbDesc": "An optimized distributed gradient boosting library designed to be highly efficient, flexible, and portable. Excellent at learning complex boundaries in tabular data.",
+      "lgbm": "LightGBM",
+      "lgbmDesc": "Developed by Microsoft, it uses tree-based learning algorithms. Fast training speeds, low memory usage, and handles large datasets with categorical features natively."
+    },
+    "stack": {
+      "title": "Decoupled System Tech Stack",
+      "client": "Client Presentation (Active)",
+      "clientDesc": "Vue 3, Pinia, Tailwind CSS v4, PrimeVue v4, TypeScript.",
+      "gateway": "API Gateway (Future Integration)",
+      "gatewayDesc": "Laravel 11, Administrative Panel & PostgreSQL (Future).",
+      "gatewayNote": "No backend API calls are implemented in this phase. The frontend uses a local DB to simulate all operations.",
+      "classifier": "AI Classifier (Future Integration)",
+      "classifierDesc": "FastAPI, XGBoost/LightGBM Models, SHAP (Explainable AI)."
+    },
+    "team": {
+      "title": "Research & Development Team",
+      "sponsor": "Faculty Sponsor",
+      "sponsorName": "Dr. Nguyen Van B",
+      "lead": "Lead Developer",
+      "leadName": "Hoang Anh",
+      "initiative": "Vietnam National University - Ho Chi Minh City (VNU-HCM) / Early Warning Research Initiative"
+    }
+  },
+  "settings": {
+    "title": "Application Preferences",
+    "description": "Configure the frontend presentation parameters including theme color palette, multilingual locales, and compact sizes.",
+    "general": {
+      "title": "General Configurations",
+      "language": "Interface Language",
+      "themeColor": "Branding Accent Theme"
+    },
+    "appearance": {
+      "title": "Appearance & Theme",
+      "mode": "Appearance",
+      "lightMode": "Light Mode",
+      "darkMode": "Dark Mode",
+      "themeColor": "Theme Color",
+      "compactMode": "Compact Row Mode",
+      "compactModeDesc": "Reduces margins and sizes in tables and listings."
+    },
+    "system": {
+      "title": "System Parameters",
+      "version": "System Build version",
+      "framework": "Client Core Framework",
+      "backend": "Backend Status",
+      "ai": "AI Prediction Mode",
+      "mockMode": "Mock Simulation Layer"
+    },
+    "languages": {
+      "en": "English (US)",
+      "vi": "Tiếng Việt (Vietnam)"
+    },
+    "themes": {
+      "blue": "Sky Blue (Default)",
+      "green": "Emerald Green",
+      "purple": "Royal Purple",
+      "orange": "Sunset Orange",
+      "red": "Crimson Red",
+      "teal": "Ocean Teal"
+    }
+  },
+  "result": {
+    "title": "Student Warning Report",
+    "description": "Algorithmic profile report detailing outcome probabilities, warning factor rankings, and prescriptive counselor guidance.",
+    "back": "Back to logs",
+    "reportTitle": "Academic Risk Analysis Summary",
+    "noResult": "No Student Prediction Loaded",
+    "noResultDesc": "Ensure the ID is correct, or perform a new prediction analysis.",
+    "academicIdentity": "Academic Identity Card",
+    "outcomeLabel": "Calculated Category",
+    "probabilityLabel": "Probability Score",
+    "confidenceLabel": "XAI Model Confidence",
+    "riskLabel": "SaaS Advisor Alert Level",
+    "advisoryCard": "Prescriptive Guidance & Advisor Recommendations",
+    "print": "Print Report",
+    "studentProfile": "Student Profile"
+  },
+  "risk": {
+    "High": "High Risk Level",
+    "Medium": "Medium Risk Level",
+    "Low": "Low Risk Level"
+  },
+  "outcomes": {
+    "Graduate": "Graduate",
+    "Dropout": "Dropout",
+    "Enrolled": "Enrolled"
+  },
+  "dialogs": {
+    "confirmReset": "Are you sure you want to restore default values? This clears current form wizard states."
+  },
+  "options": {
+    "marital": {
+      "1": "Single",
+      "2": "Married",
+      "3": "Widowed",
+      "4": "Divorced",
+      "5": "Facto Union",
+      "6": "Legally Separated"
+    },
+    "gender": {
+      "0": "Female",
+      "1": "Male"
+    },
+    "shift": {
+      "0": "Evening",
+      "1": "Daytime"
+    },
+    "yesNo": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "course": {
+      "33": "Biofuel Production Technologies",
+      "171": "Animation and Multimedia Design",
+      "8014": "Social Service (Evening Attendance)",
+      "9003": "Agronomy",
+      "9070": "Communication Design",
+      "9085": "Veterinary Nursing",
+      "9119": "Informatics Engineering",
+      "9130": "Equiniculture",
+      "9147": "Management",
+      "9238": "Social Service",
+      "9254": "Tourism",
+      "9500": "Nursing",
+      "9556": "Oral Hygiene",
+      "9670": "Advertising and Marketing Management",
+      "9773": "Journalism and Communication",
+      "9853": "Basic Education",
+      "9991": "Management (Evening Attendance)"
+    },
+    "applicationMode": {
+      "1": "1st phase - general contingent",
+      "2": "Ordinance No. 854-B/99",
+      "5": "1st phase - special contingent (Azores Island)",
+      "7": "Holders of other higher courses",
+      "10": "Ordinances No. 533-A/99, item b2 (Different Plan)",
+      "15": "Ordinances No. 533-A/99, item b3 (Other Institution)",
+      "17": "Over 23 years old",
+      "18": "Transfer",
+      "26": "Change of course",
+      "27": "Technological specialization diploma holders",
+      "39": "Over 23 years old (International)",
+      "43": "Change of institution/course (International)"
+    },
+    "qualification": {
+      "1": "Secondary Education - 12th Year of Schooling or Eq.",
+      "2": "Higher Education - Bachelor's Degree",
+      "3": "Higher Education - Degree",
+      "4": "Higher Education - Master's",
+      "5": "Higher Education - Doctorate",
+      "6": "Frequency of Higher Education",
+      "9": "12th Year of Schooling - Not Completed",
+      "10": "11th Year of Schooling - Not Completed",
+      "11": "7th Year (Old)",
+      "12": "Other - 11th Year of Schooling",
+      "14": "10th Year of Schooling",
+      "18": "General commerce course",
+      "19": "Basic education 3rd cycle (9th/10th/11th year) or equiv.",
+      "37": "Basic education 1st cycle (4th/5th year) or equiv.",
+      "38": "Basic education 2nd cycle (6th/7th/8th year) or equiv.",
+      "39": "Technological course",
+      "41": "Specialized higher education course"
+    },
+    "occupation": {
+      "1": "Student",
+      "2": "Representatives of the Legislative Power and Executive Bodies",
+      "3": "Directors of Administrative and Commercial Services",
+      "4": "Directors of Production and Specialized Services",
+      "5": "Directors of Hospitality, Catering, Trade and Other Services",
+      "6": "Specialists in Intellectual and Scientific Careers",
+      "7": "Intermediate Level Technicians and Professions",
+      "8": "Administrative Personnel",
+      "9": "Personal Service, Security and Safety Workers, and Sellers",
+      "10": "Farmers and Skilled Workers in Agriculture, Fisheries and Forestry",
+      "20": "Skilled Construction Workers (excl. electricity)",
+      "21": "Skilled Workers in Metallurgy, Metalworking and Machinery",
+      "22": "Handcraft, printing, precision instrument makers, jewellers, etc.",
+      "23": "Workers in Electricity and Electronics",
+      "24": "Food Processing, Woodworking, Garment and Other Industries",
+      "25": "Fixed Plant and Machine Operators, Assembly Workers",
+      "26": "Assembly Workers",
+      "27": "Unskilled Workers",
+      "90": "Armed Forces",
+      "99": "Other / Unknown"
+    }
+  },
+  "recommendations": {
+    "Graduate": [
+      "Continue maintaining current excellent academic performance and attendance.",
+      "Consider applying to act as a peer mentor or tutor for junior students.",
+      "Explore undergraduate research opportunities or honors projects.",
+      "Participate in career counseling and upcoming internships in your faculty."
+    ],
+    "Enrolled": [
+      "Schedule a meeting with your academic advisor to review credit progression.",
+      "Utilize university library study rooms and resources for course evaluations.",
+      "Participate in subject-specific review workshops before mid-semester assessments.",
+      "Confirm all course enrollment details and prerequisites for upcoming units."
+    ],
+    "Dropout": [
+      "Schedule an urgent guidance session with the faculty student support services.",
+      "Contact the financial affairs department to review outstanding fees and installment options.",
+      "Participate in peer-tutoring programs for modules with low success rates.",
+      "Evaluate options for transitioning to evening class attendance to manage daytime commitments.",
+      "Consider adjusting credit enrollment load to balance academic and personal requirements."
+    ]
+  }
+}

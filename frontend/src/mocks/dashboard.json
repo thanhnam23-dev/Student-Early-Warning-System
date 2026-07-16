@@ -1,0 +1,23 @@
+{
+  "stats": {
+    "totalPredictions": 142,
+    "singlePredictions": 42,
+    "batchPredictions": 100,
+    "graduateCount": 85,
+    "dropoutCount": 35,
+    "enrolledCount": 22
+  },
+  "distribution": [
+    { "label": "Graduate", "value": 85 },
+    { "label": "Dropout", "value": 35 },
+    { "label": "Enrolled", "value": 22 }
+  ],
+  "history": [
+    { "label": "Jan", "value": 15 },
+    { "label": "Feb", "value": 22 },
+    { "label": "Mar", "value": 18 },
+    { "label": "Apr", "value": 25 },
+    { "label": "May", "value": 30 },
+    { "label": "Jun", "value": 32 }
+  ]
+}

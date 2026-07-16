@@ -1,0 +1,569 @@
+/* ============================================================
+   MOTION SYSTEM — TIMING AND ACCESSIBILITY DEFAULTS
+   ============================================================ */
+:root {
+  --motion-fast: 120ms;
+  --motion-normal: 200ms;
+  --motion-slow: 300ms;
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);       /* easeOutExpo */
+  --motion-ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);    /* easeInOutExpo */
+  --motion-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);     /* Smooth dialog pop */
+  --motion-ios: cubic-bezier(0.25, 0.8, 0.25, 1);         /* iOS toggle feel */
+}
+
+/* ============================================================
+   THEME SWITCHING TRANSITION
+   ============================================================ */
+.theme-transition,
+.theme-transition * {
+  transition: background-color 250ms var(--motion-ease-out),
+              border-color 250ms var(--motion-ease-out),
+              color 250ms var(--motion-ease-out),
+              box-shadow 250ms var(--motion-ease-out) !important;
+}
+
+/* ============================================================
+   PAGE ROUTE TRANSITIONS (FALLBACK)
+   ============================================================ */
+.page-enter-active {
+  transition: opacity var(--motion-normal) var(--motion-ease-out),
+              transform var(--motion-normal) var(--motion-ease-out);
+}
+.page-leave-active {
+  transition: opacity var(--motion-fast) var(--motion-ease-in-out),
+              transform var(--motion-fast) var(--motion-ease-in-out);
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+/* ============================================================
+   VIEW TRANSITIONS API SUPPORT
+   ============================================================ */
+@view-transition {
+  navigation: auto;
+}
+
+/* Sliding active menu indicator across sidebar menu items */
+::view-transition-group(sidebar-indicator) {
+  animation-duration: var(--motion-normal);
+  animation-timing-function: var(--motion-ease-out);
+}
+
+/* ============================================================
+   CARD ENTRANCE & STAGGER SYSTEM
+   ============================================================ */
+@keyframes card-enter-keyframes {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-card-enter {
+  opacity: 0;
+  animation: card-enter-keyframes var(--motion-slow) var(--motion-ease-out) forwards;
+}
+
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 40ms; }
+.stagger-3 { animation-delay: 80ms; }
+.stagger-4 { animation-delay: 120ms; }
+.stagger-5 { animation-delay: 160ms; }
+.stagger-6 { animation-delay: 200ms; }
+.stagger-7 { animation-delay: 240ms; }
+
+/* ============================================================
+   STEPPER TRANSITIONS (FORM)
+   ============================================================ */
+.step-enter-active {
+  transition: opacity var(--motion-normal) var(--motion-ease-out),
+              transform var(--motion-normal) var(--motion-ease-out);
+}
+.step-leave-active {
+  transition: opacity var(--motion-fast) var(--motion-ease-in-out),
+              transform var(--motion-fast) var(--motion-ease-in-out);
+}
+.step-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+.step-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+/* ============================================================
+   TABLE ROW TRANSITIONS
+   ============================================================ */
+.table-row-enter-active {
+  transition: opacity var(--motion-normal) var(--motion-ease-out),
+              transform var(--motion-normal) var(--motion-ease-out);
+}
+.table-row-leave-active {
+  transition: opacity var(--motion-fast) var(--motion-ease-in-out),
+              transform var(--motion-fast) var(--motion-ease-in-out);
+  position: absolute;
+}
+.table-row-enter-from {
+  opacity: 0;
+  transform: translateY(4px);
+}
+.table-row-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+.table-row-move {
+  transition: transform var(--motion-normal) var(--motion-ease-out);
+}
+
+/* ============================================================
+   DIALOGS & OVERLAYS
+   ============================================================ */
+.p-dialog-mask {
+  transition: background-color var(--motion-normal) var(--motion-ease-out) !important;
+}
+
+.p-dialog-enter-active {
+  animation: dialog-scale-in var(--motion-normal) var(--motion-bouncy) forwards;
+}
+
+.p-dialog-leave-active {
+  animation: dialog-scale-out var(--motion-fast) var(--motion-ease-in-out) forwards;
+}
+
+@keyframes dialog-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes dialog-scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+}
+
+/* Dropdown Overlay Opening */
+.p-select-overlay,
+.p-dropdown-panel {
+  animation: dropdown-open var(--motion-fast) var(--motion-ease-out) forwards;
+}
+
+@keyframes dropdown-open {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   TOGGLE SWITCH ANIMATIONS
+   ============================================================ */
+.p-toggleswitch-track {
+  transition: background-color var(--motion-normal) var(--motion-ease-out),
+              border-color var(--motion-normal) var(--motion-ease-out) !important;
+}
+
+.p-toggleswitch-handle {
+  transition: left var(--motion-normal) var(--motion-ios),
+              background-color var(--motion-normal) var(--motion-ease-out) !important;
+}
+
+/* ============================================================
+   MICRO INTERACTIONS (BUTTONS, INPUTS, TOASTS, RIPPLES)
+   ============================================================ */
+.p-button,
+.p-inputtext,
+.p-select,
+.p-dropdown,
+.card,
+.p-card,
+a,
+button,
+input,
+select {
+  transition: background-color var(--motion-fast) var(--motion-ease-out),
+              border-color var(--motion-fast) var(--motion-ease-out),
+              color var(--motion-fast) var(--motion-ease-out),
+              box-shadow var(--motion-fast) var(--motion-ease-out),
+              transform var(--motion-fast) var(--motion-ease-out);
+}
+
+.p-button:not(.p-button-text):not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+}
+
+.p-button:not(.p-button-text):not(:disabled):active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ============================================================
+   ICON MICRO-INTERACTIONS (FONT AWESOME)
+   ============================================================ */
+.p-button i,
+button i,
+a i {
+  transition: transform var(--motion-fast) var(--motion-ease-out),
+              color var(--motion-fast) var(--motion-ease-out) !important;
+}
+
+.p-button:hover .fa-chevron-right,
+.p-button:hover .fa-arrow-right,
+button:hover .fa-chevron-right,
+button:hover .fa-arrow-right {
+  transform: translateX(2px);
+}
+
+.p-button:hover .fa-chevron-left,
+.p-button:hover .fa-arrow-left,
+button:hover .fa-chevron-left,
+button:hover .fa-arrow-left {
+  transform: translateX(-2px);
+}
+
+.p-button:hover .fa-gear,
+.p-button:hover .fa-arrows-rotate,
+.p-button:hover .fa-brain,
+button:hover .fa-gear,
+button:hover .fa-arrows-rotate,
+button:hover .fa-brain {
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Sidebar menu group hover scale */
+.group:hover i {
+  transform: scale(1.05) translateY(-0.5px);
+}
+
+/* Card KPI circular icon background hover zoom */
+.icon-circle {
+  transition: transform var(--motion-normal) var(--motion-ease-out),
+              background-color var(--motion-normal) var(--motion-ease-out);
+}
+.card:hover .icon-circle {
+  transform: scale(1.08);
+}
+
+/* Gentle pulse for upload icons */
+@keyframes icon-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06) translateY(-2px); }
+  100% { transform: scale(1); }
+}
+.animate-icon-pulse {
+  display: inline-block;
+  animation: icon-pulse 2s infinite ease-in-out;
+}
+
+/* Smoother spinners */
+.fa-spin {
+  animation-duration: 1s !important;
+  animation-timing-function: linear !important;
+}
+
+
+.p-inputtext:focus,
+.p-dropdown:focus-within,
+.p-select:focus-within {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--p-primary-500) 15%, transparent) !important;
+}
+
+/* Toast Notifications */
+.p-toast-message {
+  animation: toast-slide-in var(--motion-normal) var(--motion-bouncy) forwards;
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Custom Sidebar indicator transition (Fallback) */
+.sidebar-indicator-enter-active {
+  transition: opacity var(--motion-normal) var(--motion-ease-out),
+              transform var(--motion-normal) var(--motion-ease-out);
+}
+.sidebar-indicator-leave-active {
+  transition: opacity var(--motion-fast) var(--motion-ease-in-out),
+              transform var(--motion-fast) var(--motion-ease-in-out);
+}
+.sidebar-indicator-enter-from,
+.sidebar-indicator-leave-to {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+/* Premium Soft PrimeVue Ripple Ink */
+.p-ink {
+  background: rgba(15, 23, 42, 0.05) !important;
+  animation-duration: 400ms !important;
+}
+.dark .p-ink {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ============================================================
+   MOTION EFFECTS DISABLED OVERRIDES
+   ============================================================ */
+.no-transitions,
+.no-transitions * {
+  transition-duration: 0s !important;
+  animation-duration: 0s !important;
+  transition-delay: 0s !important;
+  animation-delay: 0s !important;
+}
+
+/* Ensure components with entrance animations are immediately visible */
+.no-transitions .animate-card-enter {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* ============================================================
+   PREMIUM VISUAL EFFECTS LAYER (AURORA BLOBS & NOISE)
+   ============================================================ */
+@keyframes float-blob-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(4vw, 3vh) scale(1.05); }
+  100% { transform: translate(-2vw, 6vh) scale(0.98); }
+}
+@keyframes float-blob-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5vw, -4vh) scale(0.95); }
+  100% { transform: translate(2vw, 3vh) scale(1.03); }
+}
+@keyframes float-blob-3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3vw, -5vh) scale(1.02); }
+  100% { transform: translate(-4vw, -2vh) scale(0.95); }
+}
+
+@keyframes aurora-pulse {
+  0% { opacity: 0; }
+  10% { opacity: 0; }
+  20% { opacity: 1; }
+  35% { opacity: 1; }
+  45% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.aurora-container {
+  opacity: 0.35;
+  transition: opacity 1s ease;
+}
+.premium-effects .aurora-container {
+  opacity: 0;
+  animation: aurora-pulse 16s infinite ease-in-out;
+}
+
+.premium-effects .blob-float-1 {
+  animation: float-blob-1 40s infinite alternate ease-in-out;
+}
+.premium-effects .blob-float-2 {
+  animation: float-blob-2 50s infinite alternate ease-in-out;
+}
+.premium-effects .blob-float-3 {
+  animation: float-blob-3 45s infinite alternate ease-in-out;
+}
+
+/* ============================================================
+   KPI STAT CARD SHIMMER & HOVER
+   ============================================================ */
+.premium-effects .kpi-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.03) 30%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.03) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  animation: light-sweep 9s infinite ease-in-out;
+}
+.dark.premium-effects .kpi-card::after {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.015) 30%,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(255, 255, 255, 0.015) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@keyframes light-sweep {
+  0% { left: -150%; }
+  35% { left: -150%; }
+  50% { left: 150%; }
+  100% { left: 150%; }
+}
+
+.premium-effects .kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04), 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+.dark.premium-effects .kpi-card:hover {
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.04), 0 2px 10px rgba(59, 130, 246, 0.03);
+}
+
+/* ============================================================
+   PRIMARY BUTTON SHIMMER & GLOW
+   ============================================================ */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer-sweep {
+  0% { left: -150%; }
+  8% { left: 150%; }
+  100% { left: 150%; }
+}
+
+.premium-effects .bg-primary-600,
+.premium-effects .p-button:not(.p-button-secondary) {
+  background: linear-gradient(
+    135deg,
+    var(--p-primary-600) 0%,
+    var(--p-primary-700) 50%,
+    var(--p-primary-600) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 10s ease infinite;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18),
+              inset 0 1px 0px rgba(255, 255, 255, 0.2);
+  transition: transform var(--motion-fast) var(--motion-ease-out),
+              box-shadow var(--motion-fast) var(--motion-ease-out) !important;
+}
+
+.premium-effects .bg-primary-600::after,
+.premium-effects .p-button:not(.p-button-secondary)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: shimmer-sweep 8s infinite ease-in-out;
+}
+
+/* Hover replay shimmer and micro-lift */
+.premium-effects .bg-primary-600:hover::after,
+.premium-effects .p-button:not(.p-button-secondary):hover::after {
+  animation: none;
+  left: 150%;
+  transition: left 0.6s ease;
+}
+
+.premium-effects .bg-primary-600:active::after,
+.premium-effects .p-button:not(.p-button-secondary):active::after {
+  left: -150%;
+  transition: 0s;
+}
+
+.premium-effects .bg-primary-600:hover,
+.premium-effects .p-button:not(.p-button-secondary):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.28),
+              inset 0 1px 0px rgba(255, 255, 255, 0.3);
+}
+
+.premium-effects .bg-primary-600:active,
+.premium-effects .p-button:not(.p-button-secondary):active {
+  transform: translateY(1px);
+}
+
+/* ============================================================
+   AI PREDICTION EXPERIENCE ACCENT PROGRESS
+   ============================================================ */
+@keyframes progress-slide {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-progress-slide {
+  width: 200%;
+  animation: progress-slide 1.5s infinite linear;
+}
+
+/* Dialog glass effects overrides */
+.premium-effects .p-dialog {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(14px) saturate(110%) !important;
+  border: 1px solid rgba(231, 237, 244, 0.6) !important;
+}
+.dark.premium-effects .p-dialog {
+  background: rgba(15, 23, 42, 0.8) !important;
+  backdrop-filter: blur(18px) saturate(120%) !important;
+  border: 1px solid rgba(51, 65, 85, 0.4) !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Disable active visual layers when premium-effects is off */
+.no-transitions .aurora-container {
+  display: none !important;
+}
+.no-transitions .bg-primary-600::after,
+.no-transitions .p-button::after,
+.no-transitions .kpi-card::after {
+  display: none !important;
+}
+.no-transitions aside {
+  transition-duration: 0s !important;
+}
+.no-transitions main {
+  scroll-behavior: auto !important;
+}
+

@@ -1,0 +1,139 @@
+[
+  {
+    "id": "PR-20260715-001",
+    "date": "2026-07-15T10:00:00.000Z",
+    "type": "single",
+    "studentCount": 1,
+    "resultSummary": "1 Graduate (Low Risk)",
+    "details": [
+      {
+        "id": "RES-20260715-001",
+        "date": "2026-07-15T10:00:00.000Z",
+        "studentCode": "22010001",
+        "studentName": "Nguyen Van A",
+        "className": "IT-01",
+        "faculty": "Faculty of Computer Science",
+        "prediction": "Graduate",
+        "probability": 0.94,
+        "confidence": 0.96,
+        "riskLevel": "Low",
+        "recommendations": [
+          "Continue maintaining current excellent academic performance and attendance.",
+          "Explore undergraduate research opportunities or honors projects."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PR-20260714-002",
+    "date": "2026-07-14T15:30:00.000Z",
+    "type": "single",
+    "studentCount": 1,
+    "resultSummary": "1 Dropout (High Risk)",
+    "details": [
+      {
+        "id": "RES-20260714-002",
+        "date": "2026-07-14T15:30:00.000Z",
+        "studentCode": "22010002",
+        "studentName": "Tran Thi B",
+        "className": "NUR-02",
+        "faculty": "Faculty of Health Sciences",
+        "prediction": "Dropout",
+        "probability": 0.82,
+        "confidence": 0.88,
+        "riskLevel": "High",
+        "recommendations": [
+          "Schedule an urgent guidance session with the faculty student support services.",
+          "Contact the financial affairs department to review outstanding fees and installment options.",
+          "Participate in peer-tutoring programs for modules with low success rates."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PR-20260710-003",
+    "date": "2026-07-10T09:15:00.000Z",
+    "type": "batch",
+    "studentCount": 5,
+    "resultSummary": "3 Graduates / 1 Enrolled / 1 Dropout",
+    "details": [
+      {
+        "id": "RES-20260710-003a",
+        "date": "2026-07-10T09:15:00.000Z",
+        "studentCode": "22010101",
+        "studentName": "Pham Minh D",
+        "className": "IT-02",
+        "faculty": "Faculty of Computer Science",
+        "prediction": "Graduate",
+        "probability": 0.88,
+        "confidence": 0.90,
+        "riskLevel": "Low",
+        "recommendations": [
+          "Continue maintaining current excellent academic performance and attendance."
+        ]
+      },
+      {
+        "id": "RES-20260710-003b",
+        "date": "2026-07-10T09:15:00.000Z",
+        "studentCode": "22010102",
+        "studentName": "Hoang Xuan E",
+        "className": "IT-02",
+        "faculty": "Faculty of Computer Science",
+        "prediction": "Graduate",
+        "probability": 0.91,
+        "confidence": 0.94,
+        "riskLevel": "Low",
+        "recommendations": [
+          "Continue maintaining current excellent academic performance and attendance."
+        ]
+      },
+      {
+        "id": "RES-20260710-003c",
+        "date": "2026-07-10T09:15:00.000Z",
+        "studentCode": "22010103",
+        "studentName": "Vu Hoang F",
+        "className": "IT-02",
+        "faculty": "Faculty of Computer Science",
+        "prediction": "Graduate",
+        "probability": 0.85,
+        "confidence": 0.87,
+        "riskLevel": "Low",
+        "recommendations": [
+          "Continue maintaining current excellent academic performance and attendance."
+        ]
+      },
+      {
+        "id": "RES-20260710-003d",
+        "date": "2026-07-10T09:15:00.000Z",
+        "studentCode": "22010104",
+        "studentName": "Bui Thi G",
+        "className": "IT-02",
+        "faculty": "Faculty of Computer Science",
+        "prediction": "Enrolled",
+        "probability": 0.45,
+        "confidence": 0.62,
+        "riskLevel": "Medium",
+        "recommendations": [
+          "Schedule a meeting with your academic advisor to review credit progression.",
+          "Confirm all course enrollment details and prerequisites for upcoming units."
+        ]
+      },
+      {
+        "id": "RES-20260710-003e",
+        "date": "2026-07-10T09:15:00.000Z",
+        "studentCode": "22010105",
+        "studentName": "Dang Van H",
+        "className": "IT-02",
+        "faculty": "Faculty of Computer Science",
+        "prediction": "Dropout",
+        "probability": 0.76,
+        "confidence": 0.81,
+        "riskLevel": "High",
+        "recommendations": [
+          "Schedule an urgent guidance session with the faculty student support services.",
+          "Consider adjusting credit enrollment load to balance academic and personal requirements."
+        ]
+      }
+    ]
+  }
+]

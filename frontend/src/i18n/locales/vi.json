@@ -1,0 +1,422 @@
+{
+  "sidebar": {
+    "dashboard": "Bảng Điều Khiển",
+    "singlePrediction": "Dự Đoán Đơn",
+    "batchPrediction": "Dự Đoán Theo Lô",
+    "history": "Lịch Sử Dự Đoán",
+    "about": "Giới Thiệu Dự Án",
+    "settings": "Cài Đặt"
+  },
+  "header": {
+    "earlyWarningSystem": "Hệ Thống Cảnh Báo Sớm Sinh Viên",
+    "mockMode": "Chế Độ Giả Lập",
+    "mockPrediction": "Giả Lập Cảnh Báo Hoạt Động"
+  },
+  "footer": {
+    "rights": "Bản Quyền Được Bảo Lưu."
+  },
+  "general": {
+    "back": "Quay Lại",
+    "next": "Bước Tiếp Theo",
+    "cancel": "Hủy Bỏ",
+    "save": "Lưu Thay Đổi",
+    "loading": "Đang tải...",
+    "viewDetails": "Xem Chi Tiết",
+    "export": "Xuất Excel",
+    "resetFilters": "Đặt Lại Bộ Lọc",
+    "confirm": "Xác Nhận",
+    "search": "Tìm kiếm sinh viên",
+    "select": "Chọn tùy chọn",
+    "yes": "Có",
+    "no": "Không",
+    "close": "Đóng",
+    "actions": "Thao Tác",
+    "success": "Thành Công",
+    "warning": "Cảnh Báo",
+    "error": "Lỗi"
+  },
+  "dashboard": {
+    "title": "Trung Tâm Điều Hành Cố Vấn",
+    "description": "Giám sát thông tin sinh viên, tỷ lệ cảnh báo học vụ và xu hướng dự đoán thuật toán mới nhất.",
+    "last6Months": "6 tháng gần đây",
+    "vsLastMonth": "so với tháng trước",
+    "statsSection": "Số Liệu Tổng Quan",
+    "analyticsSection": "Phân Tích Số Liệu",
+    "latestSection": "Đánh Giá Mới Nhất",
+    "activitySection": "Nhật Ký & Hoạt Động",
+    "noPredictions": "Chưa có dự đoán gần đây nào.",
+    "totalPredictions": "Tổng Lượng Đánh Giá",
+    "successRate": "Tỷ Lệ Tốt Nghiệp Dự Báo",
+    "graduates": "Sinh Viên Tốt Nghiệp",
+    "dropouts": "Sinh Viên Thôi Học",
+    "enrolled": "Sinh Viên Đang Học",
+    "avgConfidence": "Độ Tin Cậy Thuật Toán",
+    "warningRate": "Tỷ Lệ Cảnh Báo/Rủi Ro",
+    "activeDistribution": "Phân Phối Kết Quả Học Tập",
+    "activityFeed": "Nhật Ký & Hoạt Động Cố Vấn",
+    "recentPredictions": "Nhật Ký Kiểm Tra Dự Đoán Gần Đây",
+    "noActivity": "Chưa có hành động nào được ghi nhận.",
+    "latestSingle": "Đánh Giá Đơn Mới Nhất",
+    "latestBatch": "Xử Lý Theo Lô Mới Nhất",
+    "reviewReport": "Xem Báo Cáo Đầy Đủ",
+    "inspectBatch": "Kiểm Tra Lịch Sử Lô",
+    "noSingle": "Chưa có dự đoán đơn nào được ghi nhận.",
+    "noBatch": "Chưa có dự đoán theo lô nào được ghi nhận.",
+    "batchLog": "Nhật Ký Lô"
+  },
+  "singlePrediction": {
+    "title": "Hồ Sơ Đánh Giá Sinh Viên",
+    "description": "Thực hiện tính toán cảnh báo học vụ bằng cách nhập thủ công các chỉ số sinh viên qua 5 bước.",
+    "steps": {
+      "step1": "Nhận Diện",
+      "step1Desc": "Thông tin định danh",
+      "step2": "Cá Nhân & Nhập Học",
+      "step2Desc": "Lý lịch & thông tin tuyển sinh",
+      "step3": "Gia Cảnh & Tài Chính",
+      "step3Desc": "Hoàn cảnh gia đình & tài chính",
+      "step4": "Học Tập & Vĩ Mô",
+      "step4Desc": "Điểm số & chỉ số vĩ mô",
+      "step5": "Xem Lại & Dự Đoán",
+      "step5Desc": "Xác thực & chạy thuật toán"
+    },
+    "sections": {
+      "identification": "Nhận Diện Sinh Viên",
+      "personal": "Thông Tin Cá Nhân & Tuyển Sinh",
+      "family": "Hoàn Cảnh Gia Đình & Tài Chính",
+      "financial": "Chỉ Số Tài Chính & Hỗ Trợ",
+      "academic": "Kết Quả Học Tập & Kinh Tế Vĩ Mô",
+      "review": "Xem Lại Các Chỉ Số Đã Nhập"
+    },
+    "fields": {
+      "studentCode": "Mã Số Sinh Viên",
+      "studentCodePlaceholder": "Ví dụ: B20DCCN001",
+      "studentName": "Họ và Tên",
+      "studentNamePlaceholder": "Ví dụ: Nguyễn Văn A",
+      "className": "Lớp Sinh Hoạt",
+      "classNamePlaceholder": "Ví dụ: D20CNPM01",
+      "faculty": "Khoa Đào Tạo",
+      "facultyPlaceholder": "Ví dụ: Công nghệ thông tin",
+      "maritalStatus": "Tình Trạng Hôn Nhân",
+      "ageAtEnrollment": "Tuổi Khi Nhập Học",
+      "gender": "Giới Tính",
+      "nationality": "Quốc Tịch",
+      "international": "Sinh Viên Quốc Tế",
+      "applicationMode": "Phương Thức Tuyển Sinh",
+      "applicationOrder": "Thứ Tự Nguyện Vọng",
+      "course": "Ngành Học Đăng Ký",
+      "daytimeEvening": "Ca Học (Sáng/Tối)",
+      "previousQualification": "Trình Độ Học Vấn Trước Đây",
+      "previousQualificationGrade": "Điểm Học Vấn Trước Đây",
+      "admissionGrade": "Điểm Tuyển Sinh Đại Học",
+      "motherQualification": "Trình Độ Học Vấn Của Mẹ",
+      "fatherQualification": "Trình Độ Học Vấn Của Cha",
+      "motherOccupation": "Nghề Nghiệp Của Mẹ",
+      "fatherOccupation": "Nghề Nghiệp Của Cha",
+      "scholarshipHolder": "Được Nhận Học Bổng",
+      "debtor": "Nợ Học Phí",
+      "tuitionFeesUpToDate": "Học Phí Đã Đóng Đủ",
+      "displaced": "Sinh Viên Xa Nhà",
+      "educationalSpecialNeeds": "Nhu Cầu Giáo Dục Đặc Biệt",
+      "sem1Credited": "Số Tín Chỉ Miễn Giảm Học Kỳ 1",
+      "sem1Enrolled": "Số Tín Chỉ Đăng Ký Học Kỳ 1",
+      "sem1Evaluations": "Số Tín Chỉ Đánh Giá Học Kỳ 1",
+      "sem1Approved": "Số Tín Chỉ Đạt Học Kỳ 1",
+      "sem1Grade": "Điểm Trung Bình Học Kỳ 1",
+      "sem1WithoutEvaluations": "Số Tín Chỉ Không Đánh Giá Kỳ 1",
+      "sem2Credited": "Số Tín Chỉ Miễn Giảm Học Kỳ 2",
+      "sem2Enrolled": "Số Tín Chỉ Đăng Ký Học Kỳ 2",
+      "sem2Evaluations": "Số Tín Chỉ Đánh Giá Học Kỳ 2",
+      "sem2Approved": "Số Tín Chỉ Đạt Học Kỳ 2",
+      "sem2Grade": "Điểm Trung Bình Học Kỳ 2",
+      "sem2WithoutEvaluations": "Số Tín Chỉ Không Đánh Giá Kỳ 2",
+      "unemploymentRate": "Tỷ Lệ Thất Nghiệp Vĩ Mô (%)",
+      "inflationRate": "Tỷ Lệ Lạm Phát Vĩ Mô (%)",
+      "gdp": "Tăng Trưởng GDP Vĩ Mô (%)"
+    },
+    "errors": {
+      "studentCode": "Vui lòng nhập Mã số sinh viên",
+      "studentName": "Vui lòng nhập Họ và tên",
+      "className": "Vui lòng nhập Lớp sinh hoạt",
+      "faculty": "Vui lòng nhập Khoa đào tạo",
+      "ageAtEnrollment": "Tuổi phải nằm trong khoảng từ 10 đến 100",
+      "previousQualificationGrade": "Điểm học vấn phải là một số dương",
+      "admissionGrade": "Điểm tuyển sinh phải là một số dương"
+    },
+    "triggerPredict": "Chạy Tính Toán Cảnh Báo",
+    "predictionComplete": "Đã Hoàn Thành Phân Tích Cảnh Báo",
+    "closeDialog": "Đóng Báo Cáo",
+    "identificationNote": "Các trường định danh này chỉ dùng để hiển thị trên giao diện và sẽ KHÔNG được gửi tới mô hình học máy."
+  },
+  "batchPrediction": {
+    "title": "Chạy Dự Đoán Theo Lô Spreadsheet",
+    "description": "Phân tích các chỉ số rủi ro cho cả lớp học hoặc khóa học bằng cách nhập bảng tính Excel.",
+    "uploadCard": {
+      "title": "Tải Lên Bảng Tính Quản Trị",
+      "dragDrop": "Kéo thả tệp bảng tính sinh viên vào đây, hoặc click để chọn tệp",
+      "fileFormats": "Hỗ trợ định dạng .xlsx và .xls dung lượng tối đa 1MB.",
+      "downloadTemplate": "Tải Excel Tệp Mẫu"
+    },
+    "processing": "Đang thực hiện tính toán rủi ro trên công cụ AI...",
+    "preview": "Xem Trước Hàng Bảng Tính & Nhập Liệu (Tìm thấy {count} dòng)",
+    "results": "Báo Cáo Tính Toán Theo Lô (Đã xử lý {count} sinh viên)",
+    "exportBtn": "Xuất Báo Cáo Phân Tích Excel"
+  },
+  "history": {
+    "title": "Nhật Ký & Kiểm Toán Cảnh Báo",
+    "description": "Tra cứu lịch sử cảnh báo sinh viên, các đợt chạy tính toán theo lô và các khuyến nghị hỗ trợ.",
+    "filters": {
+      "searchLabel": "Tìm Kiếm Sinh Viên",
+      "searchPlaceholder": "Mã số, họ tên, lớp...",
+      "typeLabel": "Loại Hình Đánh Giá",
+      "outcomeLabel": "Nhóm Kết Quả",
+      "riskLabel": "Mức Độ Rủi Ro",
+      "allTypes": "Tất Cả Loại Hình",
+      "single": "Đánh Giá Đơn",
+      "batch": "Đánh Giá Theo Lô",
+      "allOutcomes": "Tất Cả Kết Quả",
+      "allRisks": "Tất Cả Mức Độ"
+    },
+    "columns": {
+      "sessionId": "Mã Phiên Lưu trữ",
+      "dateTime": "Ngày / Giờ Chạy",
+      "type": "Loại Hình",
+      "studentsCount": "Số Lượng SV",
+      "summary": "Tóm Tắt Kết Quả",
+      "actions": "Thao Tác"
+    },
+    "empty": "Không Tìm Thấy Nhật Ký Dự Đoán",
+    "emptyDesc": "Thử điều chỉnh bộ lọc hoặc thực hiện dự đoán mới cho sinh viên.",
+    "batchBreakdown": "Chi Tiết Kết Quả Dự Đoán Theo Lô"
+  },
+  "about": {
+    "title": "Giới Thiệu Dự Án",
+    "description": "Khám phá mục tiêu nghiên cứu, nguồn dữ liệu, mô hình học máy và kiến trúc hệ thống của Hệ thống Cảnh báo Sớm Sinh viên.",
+    "overview": {
+      "title": "Tổng Quan Về Dự Án",
+      "p1": "Hệ thống Cảnh báo Sớm Sinh viên tích hợp AI (SEWS) được phát triển nhằm giải quyết thách thức lớn về việc sinh viên thôi học trong giáo dục đại học. Bằng cách phân tích dữ liệu nhân khẩu học, kinh tế xã hội, tuyển sinh và kết quả học tập ở cấp độ học kỳ, hệ thống sẽ tính toán Điểm số Rủi ro của từng sinh viên. Điều này giúp cố vấn học tập và khoa chủ quản đưa ra các can thiệp kịp thời trước khi sinh viên quyết định thôi học.",
+      "p2": "Thay vì chỉ là một công cụ dự đoán thô, hệ thống được thiết kế theo hướng Trực quan hóa Giải thích được (XAI), giúp chỉ rõ lý do tại sao sinh viên lại bị cảnh báo rủi ro cao, từ đó hỗ trợ nhà trường đưa ra các tư vấn tài chính, học vụ hoặc tâm lý chính xác.",
+      "titleObjectives": "Mục Tiêu Nghiên Cứu",
+      "obj1": "Nhận diện sớm các rủi ro bỏ học của sinh viên.",
+      "obj2": "Minh bạch hóa các nguyên nhân dẫn đến cảnh báo rủi ro.",
+      "obj3": "Thiết lập bản đồ khuyến nghị điều hướng cá nhân hóa.",
+      "obj4": "Hỗ trợ tích hợp qua API để mở rộng quy mô triển khai."
+    },
+    "dataset": {
+      "title": "Hồ Sơ Dữ Liệu: UCI Student Attrition",
+      "p1": "Trình xử lý AI của SEWS sử dụng bộ dữ liệu 'Predict Students' Dropout and Academic Success' từ Kho lưu trữ Học máy UCI (Mã số: 697). Dữ liệu thu thập từ một cơ sở giáo dục đại học tại Bồ Đào Nha. Bộ dữ liệu chứa 4,424 bản ghi với 36 thuộc tính học tập và nhân khẩu học chính.",
+      "records": "Số Lượng Bản Ghi",
+      "features": "Số Lượng Thuộc Tính"
+    },
+    "algorithms": {
+      "title": "Thuật Toán Huấn Luyện (Phân Loại Ensemble)",
+      "rf": "Random Forest",
+      "rfDesc": "Xây dựng nhiều cây quyết định trong quá trình huấn luyện và đưa ra kết quả phân loại dựa trên biểu quyết của các cây đơn lẻ. Giúp tránh hiện tượng quá khớp dữ liệu.",
+      "xgb": "XGBoost",
+      "xgbDesc": "Thư viện tăng cường độ dốc (gradient boosting) tối ưu hóa được thiết kế hiệu quả, linh hoạt và di động. Đạt hiệu năng cực cao trên dữ liệu bảng phức tạp.",
+      "lgbm": "LightGBM",
+      "lgbmDesc": "Phát triển bởi Microsoft, sử dụng các thuật toán học dựa trên cây. Tốc độ huấn luyện nhanh, tiết kiệm bộ nhớ và xử lý dữ liệu dạng phân loại rất tốt."
+    },
+    "stack": {
+      "title": "Kiến Trúc Hệ Thống Độc Lập",
+      "client": "Ứng Dụng Client (Hiện Tại)",
+      "clientDesc": "Vue 3, Pinia, Tailwind CSS v4, PrimeVue v4, TypeScript.",
+      "gateway": "Cổng API Gateway (Tích Hợp Tương Lai)",
+      "gatewayDesc": "Laravel 11, Quản lý hành chính & Cơ sở dữ liệu PostgreSQL (Tương lai).",
+      "gatewayNote": "Không có yêu cầu API backend nào được thực hiện trong giai đoạn này. Client sử dụng giả lập dữ liệu cục bộ.",
+      "classifier": "Bộ Phân Loại AI (Tích Hợp Tương Lai)",
+      "classifierDesc": "FastAPI, Mô hình XGBoost/LightGBM, Giải thích SHAP (Explainable AI)."
+    },
+    "team": {
+      "title": "Đội Ngũ Nghiên Cứu & Phát Triển",
+      "sponsor": "Giảng Viên Hướng Dẫn",
+      "sponsorName": "TS. Nguyễn Văn B",
+      "lead": "Nhà Phát Triển Chính",
+      "leadName": "Hoàng Anh",
+      "initiative": "Đại học Quốc gia Thành phố Hồ Chí Minh (VNU-HCM) / Sáng kiến Nghiên cứu Cảnh báo Sớm"
+    }
+  },
+  "settings": {
+    "title": "Tùy Chọn Ứng Dụng",
+    "description": "Cấu hình các tham số hiển thị giao diện bao gồm tông màu chủ đạo, ngôn ngữ đa ngữ và hiển thị bảng gọn nhẹ.",
+    "general": {
+      "title": "Cấu Hình Chung",
+      "language": "Ngôn Ngữ Hệ Thống",
+      "themeColor": "Tông Màu Chủ Đạo"
+    },
+    "appearance": {
+      "title": "Giao Diện & Tông Màu",
+      "mode": "Chế Độ Giao Diện",
+      "lightMode": "Giao Diện Sáng",
+      "darkMode": "Giao Diện Tối",
+      "themeColor": "Tông Màu Chủ Đạo",
+      "compactMode": "Hiển Thị Dòng Gọn Nhẹ",
+      "compactModeDesc": "Giảm lề và kích thước chữ trong bảng dữ liệu."
+    },
+    "system": {
+      "title": "Tham Số Hệ Thống",
+      "version": "Phiên bản phát hành",
+      "framework": "Nền tảng Client chính",
+      "backend": "Trạng thái Backend",
+      "ai": "Chế độ dự báo AI",
+      "mockMode": "Lớp Mô Phỏng Giả Lập"
+    },
+    "languages": {
+      "en": "English (US) - Tiếng Anh",
+      "vi": "Tiếng Việt (Vietnam)"
+    },
+    "themes": {
+      "blue": "Xanh Dương (Mặc Định)",
+      "green": "Xanh Lá Cây",
+      "purple": "Tím Hoàng Gia",
+      "orange": "Cam Hoàng Hôn",
+      "red": "Đỏ Crimson",
+      "teal": "Xanh Ngọc Teal"
+    }
+  },
+  "result": {
+    "title": "Chi Tiết Báo Cáo Cảnh Báo",
+    "description": "Báo cáo hồ sơ thuật toán mô tả chi tiết xác suất kết quả, xếp hạng yếu tố cảnh báo và khuyến nghị định hướng từ cố vấn.",
+    "back": "Quay lại nhật ký",
+    "reportTitle": "Tóm Tắt Phân Tích Rủi Ro Học Vụ",
+    "noResult": "Không tìm thấy kết quả dự đoán",
+    "noResultDesc": "Đảm bảo mã số chính xác hoặc chạy lại tính toán dự đoán sinh viên.",
+    "academicIdentity": "Thẻ Định Danh Chỉ Số Học Tập",
+    "outcomeLabel": "Kết Quả Học Tập Dự Báo",
+    "probabilityLabel": "Chỉ Số Xác Suất",
+    "confidenceLabel": "Độ Tin Cậy Mô Hình XAI",
+    "riskLabel": "Mức Độ Rủi Ro Cố Vấn",
+    "advisoryCard": "Khuyến Nghị Điều Hướng Hỗ Trợ Từ Cố Vấn Học Tập",
+    "print": "In Báo Cáo",
+    "studentProfile": "Hồ Sơ Sinh Viên"
+  },
+  "risk": {
+    "High": "Mức Độ Rủi Ro Cao",
+    "Medium": "Mức Độ Rủi Ro Trung Bình",
+    "Low": "Mức Độ Rủi Ro Thấp"
+  },
+  "outcomes": {
+    "Graduate": "Tốt Nghiệp",
+    "Dropout": "Thôi Học",
+    "Enrolled": "Đang Học"
+  },
+  "dialogs": {
+    "confirmReset": "Bạn có chắc chắn muốn đặt lại các giá trị? Thao tác này sẽ xóa dữ liệu các bước hiện tại."
+  },
+  "options": {
+    "marital": {
+      "1": "Độc thân",
+      "2": "Đã kết hôn",
+      "3": "Góa phụ",
+      "4": "Ly hôn",
+      "5": "Đồng cư ngụ",
+      "6": "Ly thân hợp pháp"
+    },
+    "gender": {
+      "0": "Nữ",
+      "1": "Nam"
+    },
+    "shift": {
+      "0": "Buổi tối",
+      "1": "Ban ngày"
+    },
+    "yesNo": {
+      "0": "Không",
+      "1": "Có"
+    },
+    "course": {
+      "33": "Công nghệ sản xuất nhiên liệu sinh học",
+      "171": "Thiết kế hoạt hình và Đa phương tiện",
+      "8014": "Công tác xã hội (Hệ tối)",
+      "9003": "Nông học",
+      "9070": "Thiết kế truyền thông",
+      "9085": "Điều dưỡng thú y",
+      "9119": "Kỹ thuật tin học",
+      "9130": "Quản lý chăn nuôi ngựa",
+      "9147": "Quản trị kinh doanh",
+      "9238": "Công tác xã hội",
+      "9254": "Du lịch",
+      "9500": "Điều dưỡng",
+      "9556": "Vệ sinh răng miệng",
+      "9670": "Quản lý quảng cáo và Tiếp thị",
+      "9773": "Báo chí và Truyền thông",
+      "9853": "Giáo dục cơ bản",
+      "9991": "Quản trị kinh doanh (Hệ tối)"
+    },
+    "applicationMode": {
+      "1": "Đợt 1 - Tuyển sinh chung",
+      "2": "Nghị định số 854-B/99",
+      "5": "Đợt 1 - Tuyển sinh đặc biệt (Quần đảo Azores)",
+      "7": "Người có bằng đại học khác",
+      "10": "Nghị định số 533-A/99, mục b2 (Kế hoạch khác)",
+      "15": "Nghị định số 533-A/99, mục b3 (Trường học khác)",
+      "17": "Thí sinh trên 23 tuổi",
+      "18": "Chuyển trường",
+      "26": "Chuyển ngành",
+      "27": "Bằng chuyên khoa công nghệ",
+      "39": "Thí sinh trên 23 tuổi (Quốc tế)",
+      "43": "Chuyển trường/ngành (Quốc tế)"
+    },
+    "qualification": {
+      "1": "Trung học phổ thông - Lớp 12 hoặc tương đương",
+      "2": "Đại học - Bằng cử nhân (Bachelor)",
+      "3": "Đại học - Bằng cử nhân (Degree)",
+      "4": "Đại học - Thạc sĩ",
+      "5": "Đại học - Tiến sĩ",
+      "6": "Đang học đại học dở dang",
+      "9": "Lớp 12 - Chưa hoàn thành",
+      "10": "Lớp 11 - Chưa hoàn thành",
+      "11": "Lớp 7 (Chương trình cũ)",
+      "12": "Khác - Lớp 11",
+      "14": "Lớp 10",
+      "18": "Khóa học thương mại tổng hợp",
+      "19": "Trung học cơ sở (Lớp 9/10/11) hoặc tương đương",
+      "37": "Tiểu học (Lớp 4/5) hoặc tương đương",
+      "38": "Trung học cơ sở cơ bản (Lớp 6/7/8) hoặc tương đương",
+      "39": "Khóa học định hướng công nghệ",
+      "41": "Khóa học chuyên khoa đại học"
+    },
+    "occupation": {
+      "1": "Sinh viên / Học sinh",
+      "2": "Đại diện cơ quan lập pháp và hành pháp",
+      "3": "Giám đốc dịch vụ hành chính và thương mại",
+      "4": "Giám đốc sản xuất và dịch vụ chuyên dụng",
+      "5": "Giám đốc dịch vụ lưu trú, ăn uống, thương mại",
+      "6": "Chuyên gia học thuật và khoa học",
+      "7": "Kỹ thuật viên và chuyên gia cấp trung",
+      "8": "Nhân viên hành chính",
+      "9": "Nhân viên dịch vụ cá nhân, bảo vệ và bán hàng",
+      "10": "Nông dân và lao động nông, lâm, ngư nghiệp",
+      "20": "Thợ xây dựng lành nghề (trừ điện)",
+      "21": "Thợ luyện kim, cơ khí và máy móc lành nghề",
+      "22": "Thợ thủ công, in ấn, dụng cụ chính xác",
+      "23": "Thợ điện và điện tử lành nghề",
+      "24": "Công nhân chế biến thực phẩm, gỗ, may mặc",
+      "25": "Công nhân vận hành máy và thiết bị cố định",
+      "26": "Công nhân lắp ráp",
+      "27": "Lao động phổ thông / Không lành nghề",
+      "90": "Lực lượng vũ trang",
+      "99": "Khác / Chưa xác định"
+    }
+  },
+  "recommendations": {
+    "Graduate": [
+      "Tiếp tục duy trì kết quả học tập xuất sắc và tỷ lệ chuyên cần hiện tại.",
+      "Cân nhắc đăng ký làm người hướng dẫn (peer mentor) hoặc trợ giảng cho sinh viên khóa dưới.",
+      "Khám phá các cơ hội nghiên cứu khoa học sinh viên hoặc đề tài danh dự.",
+      "Tham gia các hoạt động hướng nghiệp và thực tập sắp tới tại khoa."
+    ],
+    "Enrolled": [
+      "Lên lịch họp với cố vấn học tập để xem xét lộ trình tích lũy tín chỉ.",
+      "Sử dụng phòng tự học và tài nguyên thư viện trường cho các kỳ đánh giá.",
+      "Tham gia các hội thảo ôn tập chuyên đề trước các kỳ kiểm tra giữa kỳ.",
+      "Xác nhận lại chi tiết đăng ký học phần và điều kiện tiên quyết cho các môn học tới."
+    ],
+    "Dropout": [
+      "Lên lịch làm việc khẩn cấp với bộ phận hỗ trợ sinh viên của khoa để được tư vấn học vụ.",
+      "Liên hệ phòng kế hoạch tài chính để xem xét dư nợ học phí và phương án đóng theo đợt.",
+      "Tham gia chương trình gia sư nhóm cho các học phần có tỷ lệ trượt cao.",
+      "Đánh giá phương án chuyển sang học ca tối để cân bằng các cam kết cá nhân ban ngày.",
+      "Cân nhắc điều chỉnh khối lượng tín chỉ đăng ký để giảm bớt áp lực học tập."
+    ]
+  }
+}
