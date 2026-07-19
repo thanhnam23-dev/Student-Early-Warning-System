@@ -147,16 +147,20 @@ def load_and_preprocess_data(csv_path):
 
 # Chạy thử nghiệm và lưu trữ bộ tiền xử lý
 if __name__ == "__main__":
-    csv_file_path = "S:/Seminar/predict+students+dropout+and+academic+success/data.csv"
+    csv_file_path = "S:/Seminar/ai-server/predict+students+dropout+and+academic+success/data.csv"
     preprocessor, X_train, X_test, y_train, y_test, active_df = load_and_preprocess_data(csv_file_path)
     
+    # Tạo thư mục nếu chưa có
+    os.makedirs("S:/Seminar/ai-server/models", exist_ok=True)
+    os.makedirs("S:/Seminar/ai-server/data", exist_ok=True)
+    
     # Lưu bộ tiền xử lý preprocessor để sử dụng lại trong file chạy thử nghiệm và Dashboard
-    with open("S:/Seminar/preprocessor.pkl", "wb") as f:
+    with open("S:/Seminar/ai-server/models/preprocessor.pkl", "wb") as f:
         pickle.dump(preprocessor, f)
     
     # Lưu tập dữ liệu sinh viên đang học hoạt động (Enrolled) để Dashboard truy vấn mẫu
-    active_df.to_csv("S:/Seminar/active_students.csv", index=False)
-    print("Đã lưu preprocessor.pkl và active_students.csv thành công!")
+    active_df.to_csv("S:/Seminar/ai-server/data/active_students.csv", index=False)
+    print("Đã lưu preprocessor.pkl vào models/ và active_students.csv vào data/ thành công!")
 ```
 
 ---
