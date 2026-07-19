@@ -34,7 +34,6 @@ def load_and_preprocess_data(csv_path, output_dir):
     print(f"Kích thước tập sinh viên đang học hoạt động (Enrolled): {df_active_students.shape}")
 
     print("\n--- Bước 3: Thực hiện Kỹ nghệ đặc trưng (Feature Engineering) ---")
-    # Chúng ta tính toán các đặc trưng mới trực tiếp trên tập huấn luyện và tập sinh viên đang học
     for data in [df_train_val, df_active_students]:
         # 1. Tỷ lệ hoàn thành học phần kỳ 1 và kỳ 2 (tránh chia cho 0 bằng cách điền 0 nếu enrolled = 0)
         data['Sem1_Approved_Ratio'] = np.where(
@@ -97,8 +96,6 @@ def load_and_preprocess_data(csv_path, output_dir):
         "Mother's occupation", "Father's occupation"
     ]
     
-    # Khởi tạo preprocessor
-    # remainder='passthrough' sẽ giữ nguyên các biến nhị phân: Gender, Displaced, Debtor, Tuition fees up to date, Financial_Risk...
     preprocessor = ColumnTransformer(
         transformers=[
             ('num', StandardScaler(), num_features),
@@ -114,9 +111,15 @@ def load_and_preprocess_data(csv_path, output_dir):
     print(f"Kích thước X_train sau tiền xử lý: {X_train_processed.shape}")
     print(f"Kích thước X_test sau tiền xử lý: {X_test_processed.shape}")
     
+    # Tạo các thư mục con nếu chưa có
+    data_dir = os.path.join(output_dir, "data")
+    models_dir = os.path.join(output_dir, "models")
+    os.makedirs(data_dir, exist_ok=True)
+    os.makedirs(models_dir, exist_ok=True)
+
     # Lưu các file kết quả
-    preprocessor_path = os.path.join(output_dir, "preprocessor.pkl")
-    active_students_path = os.path.join(output_dir, "active_students.csv")
+    preprocessor_path = os.path.join(models_dir, "preprocessor.pkl")
+    active_students_path = os.path.join(data_dir, "active_students.csv")
     
     print(f"\n--- Bước 8: Lưu trữ kết quả đầu ra ---")
     with open(preprocessor_path, "wb") as f:
@@ -127,11 +130,11 @@ def load_and_preprocess_data(csv_path, output_dir):
     print(f"Đã lưu tập sinh viên đang học hoạt động vào: {active_students_path}")
     
     # Lưu X_train, X_test, y_train, y_test dạng numpy/pandas để tiện cho bước train model sau này
-    np.save(os.path.join(output_dir, "X_train_processed.npy"), X_train_processed)
-    np.save(os.path.join(output_dir, "X_test_processed.npy"), X_test_processed)
-    y_train.to_csv(os.path.join(output_dir, "y_train.csv"), index=False)
-    y_test.to_csv(os.path.join(output_dir, "y_test.csv"), index=False)
-    print("Đã lưu các file numpy trung gian phục vụ cho quá trình huấn luyện mô hình.")
+    np.save(os.path.join(data_dir, "X_train_processed.npy"), X_train_processed)
+    np.save(os.path.join(data_dir, "X_test_processed.npy"), X_test_processed)
+    y_train.to_csv(os.path.join(data_dir, "y_train.csv"), index=False)
+    y_test.to_csv(os.path.join(data_dir, "y_test.csv"), index=False)
+    print("Đã lưu các file numpy trung gian vào thư mục 'data/' phục vụ cho quá trình huấn luyện mô hình.")
     
     print("\n=== HOÀN THÀNH TIỀN XỬ LÝ DỮ LIỆU THÀNH CÔNG! ===")
 
