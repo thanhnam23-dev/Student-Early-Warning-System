@@ -6,6 +6,7 @@ import { formatPercent } from '../../utils/formatter';
 import RiskBadge from './RiskBadge.vue';
 import RecommendationCard from './RecommendationCard.vue';
 import InputSummaryCard from './InputSummaryCard.vue';
+import ShapCard from './ShapCard.vue';
 import { RISK_COLORS, OUTCOME_COLORS } from '../../constants/colors';
 import { computed } from 'vue';
 
@@ -126,6 +127,9 @@ const headerTheme = computed(() => {
         :recommendations="result.recommendations" 
         :prediction="result.prediction" 
       />
+
+      <!-- AI Explainability (SHAP) -->
+      <ShapCard :shap-values="result.shapValues" />
 
       <!-- Input Summary Collapse Accordion -->
       <div v-if="studentInput" class="space-y-2">

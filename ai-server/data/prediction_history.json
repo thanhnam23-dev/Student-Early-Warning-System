@@ -1,5 +1,74 @@
 [
   {
+    "id": "PR-1784727252208",
+    "date": "2026-07-22T13:34:12.197003Z",
+    "type": "single",
+    "studentCount": 1,
+    "resultSummary": "1 Enrolled (Medium Risk)",
+    "details": [
+      {
+        "id": "RES-1784727252",
+        "date": "2026-07-22T13:34:12.197003Z",
+        "studentCode": "2255010110",
+        "studentName": "Bình An",
+        "className": "22CN5",
+        "faculty": "Công nghệ thông tin",
+        "prediction": "Enrolled",
+        "probability": 0.4599912920446328,
+        "confidence": 0.5400087079553673,
+        "riskLevel": "Medium",
+        "recommendations": [
+          "Đặt lịch hẹn với cố vấn học tập để rà soát tiến độ tích lũy tín chỉ.",
+          "Sử dụng phòng tự học và tài liệu thư viện để chuẩn bị tốt cho các bài đánh giá.",
+          "Tham gia các câu lạc bộ học thuật để bổ trợ kỹ năng.",
+          "Xác nhận lại chi tiết đăng ký môn học và điều kiện tiên quyết cho các kỳ học tới."
+        ],
+        "shapValues": [
+          {
+            "feature": "Tuition fees up to date",
+            "impact": 1.4327966782080788,
+            "type": "positive"
+          },
+          {
+            "feature": "Sem1_Approved_Ratio",
+            "impact": -1.1549977387669197,
+            "type": "negative"
+          },
+          {
+            "feature": "Financial_Risk",
+            "impact": 0.6142269994422976,
+            "type": "positive"
+          },
+          {
+            "feature": "Sem2_Approved_Ratio",
+            "impact": -0.5550909717319974,
+            "type": "negative"
+          },
+          {
+            "feature": "Debtor",
+            "impact": 0.453359592267676,
+            "type": "positive"
+          },
+          {
+            "feature": "Admission grade",
+            "impact": -0.38142120183712547,
+            "type": "negative"
+          },
+          {
+            "feature": "Curricular units 2nd sem (approved)",
+            "impact": -0.3593761831174741,
+            "type": "negative"
+          },
+          {
+            "feature": "Curricular units 2nd sem (grade)",
+            "impact": -0.2964873645067156,
+            "type": "negative"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "PR-1784726052227",
     "date": "2026-07-22T13:14:12.223444Z",
     "type": "single",
