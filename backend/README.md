@@ -1,78 +1,58 @@
 # Backend
 
-Backend service for the Student Early Warning System.
+Backend service for the **Student Early Warning System**.
 
-## Overview
-
-The backend acts as the central coordinator between the frontend and the AI prediction service. It is responsible for processing user requests, validating input data, managing prediction history, and communicating with the AI server.
+The backend is built with **Laravel** and serves as the central coordinator between the Vue frontend and the FastAPI-based AI prediction service. It handles request validation, data preprocessing, prediction workflows, file processing, and prediction history management.
 
 ---
 
-## Responsibilities
-
-- RESTful API
-- Single prediction request
-- Batch prediction request
-- Excel file processing
-- Input validation
-- Prediction history management
-- JSON storage
-- Communication with AI Server
-
----
-
-## Main Features
-
-### Single Prediction
-
-Receive a student's information from the frontend and forward the processed data to the AI server.
-
-### Batch Prediction
-
-- Upload Excel files
-- Parse student records
-- Send prediction requests
-- Return prediction results
-- Export processed results
-
-### Prediction History
-
-Store prediction sessions as JSON files for future reference.
-
----
-
-## Project Structure
+# Architecture
 
 ```text
-backend/
-│
-├── app/
-├── bootstrap/
-├── config/
-├── database/
-├── public/
-├── resources/
-├── routes/
-├── storage/
-│   ├── uploads/
-│   └── predictions/
-├── tests/
-│
-└── README.md
+Vue Frontend
+      │
+      ▼
+Laravel Backend
+      │
+      ▼
+FastAPI AI Server
+      │
+      ▼
+Machine Learning Model
 ```
+
+The Laravel backend is responsible for orchestrating the entire prediction workflow while remaining independent of the machine learning implementation.
 
 ---
 
-## Workflow
+# Responsibilities
+
+- RESTful API development
+- Student data validation
+- Single prediction processing
+- Batch prediction processing
+- Excel file upload and parsing
+- Communication with AI Server
+- Prediction history management
+- JSON-based local storage
+- Response formatting
+- Error handling
+
+---
+
+# Core Features
+
+## Single Prediction
+
+Predict the academic risk level of an individual student.
+
+Workflow:
 
 ```text
 Frontend
     │
     ▼
-Validate Request
-    │
-    ▼
-Process Input
+Validate Input
     │
     ▼
 Call AI Server
@@ -81,27 +61,212 @@ Call AI Server
 Receive Prediction
     │
     ▼
-Save JSON
+Save History
     │
     ▼
-Return Response
+Return Result
 ```
 
 ---
 
-## Technologies
+## Batch Prediction
 
-- Laravel
-- PHP
-- REST API
-- JSON Storage
+Predict multiple students simultaneously using Excel files.
+
+Features:
+
+- Upload Excel (.xlsx)
+- Parse student records
+- Validate each record
+- Send batch requests to AI Server
+- Generate prediction results
+- Export prediction report
 
 ---
 
-## Future Improvements
+## Prediction History
 
-- Database integration
+Store prediction sessions locally.
+
+Current implementation:
+
+- JSON storage
+- Timestamp
+- Prediction result
+- Risk level
+- Recommendation
+- Uploaded filename (batch mode)
+
+---
+
+# Project Structure
+
+```text
+backend/
+│
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   ├── Middleware/
+│   │   └── Requests/
+│   │
+│   ├── Models/
+│   └── Services/
+│       ├── AIService.php
+│       ├── ExcelService.php
+│       └── HistoryService.php
+│
+├── bootstrap/
+├── config/
+├── database/
+├── public/
+├── resources/
+├── routes/
+│   ├── api.php
+│   ├── web.php
+│   └── console.php
+│
+├── storage/
+│   ├── uploads/
+│   └── predictions/
+│
+├── tests/
+│
+├── composer.json
+└── README.md
+```
+
+---
+
+# API Modules
+
+## Prediction API
+
+- Single Prediction
+- Batch Prediction
+
+---
+
+## History API
+
+- Get prediction history
+- Delete history
+- Search history
+
+---
+
+## File API
+
+- Upload Excel
+- Download prediction results
+- Download template
+
+---
+
+## System API
+
+- Health Check
+- AI Server Status
+
+---
+
+# Workflow
+
+```text
+User
+ │
+ ▼
+Vue Frontend
+ │
+ ▼
+Laravel API
+ │
+ ├──────────────┐
+ │              │
+ ▼              ▼
+Validation   Excel Parser
+ │              │
+ └──────┬───────┘
+        ▼
+ Data Processing
+        │
+        ▼
+ FastAPI AI Server
+        │
+        ▼
+ Prediction Result
+        │
+        ▼
+ Save JSON History
+        │
+        ▼
+ API Response
+```
+
+---
+
+# Technologies
+
+| Layer | Technology |
+|--------|------------|
+| Framework | Laravel 13 |
+| Language | PHP 8.3 |
+| API | RESTful API |
+| File Processing | Laravel Excel |
+| HTTP Client | Laravel HTTP Client |
+| Storage | JSON |
+| AI Communication | FastAPI |
+| Data Format | JSON |
+
+---
+
+# Development Roadmap
+
+## Phase 1
+
+- REST API
+- Single Prediction
+- Batch Prediction
+- Excel Upload
+- JSON History
+
+---
+
+## Phase 2
+
+- SQLite/MySQL Integration
 - Authentication
-- Role-based authorization
-- Prediction analytics
-- Notification system
+- User Management
+- Role-based Authorization
+
+---
+
+## Phase 3
+
+- Dashboard Analytics
+- Prediction Statistics
+- Notification System
+- Logging & Monitoring
+- API Documentation (Swagger/OpenAPI)
+
+---
+
+# Development Status
+
+| Module | Status |
+|---------|--------|
+| Laravel Setup | ✅ |
+| REST API | 🚧 |
+| Single Prediction | ⏳ |
+| Batch Prediction | ⏳ |
+| Excel Processing | ⏳ |
+| AI Communication | ⏳ |
+| History Storage | ⏳ |
+| Authentication | 📅 Planned |
+| Database | 📅 Planned |
+
+---
+
+# Notes
+
+This backend is intentionally designed to remain independent of the machine learning implementation. The AI model can be updated or replaced without affecting the frontend or backend architecture, as long as the FastAPI service maintains a consistent API contract.
