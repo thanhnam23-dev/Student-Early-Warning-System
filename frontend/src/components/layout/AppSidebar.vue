@@ -25,7 +25,6 @@ const menuGroups = [
     groupKey: 'sidebar.groups.predictions',
     items: [
       { labelKey: 'sidebar.singlePrediction', path: ROUTES.SINGLE_PREDICTION, icon: 'fa-solid fa-user-graduate' },
-      { labelKey: 'sidebar.batchPrediction', path: ROUTES.BATCH_PREDICTION, icon: 'fa-solid fa-file-import' },
       { labelKey: 'sidebar.history', path: ROUTES.PREDICTION_HISTORY, icon: 'fa-solid fa-clock-rotate-left' }
     ]
   },

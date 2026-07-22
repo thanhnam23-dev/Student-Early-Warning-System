@@ -27,34 +27,6 @@ const formatEventMessage = (event: any) => {
     });
   }
 
-  // Try matching batch predictions: "Batch prediction completed for [Count] rows: [Breakdown]"
-  const batchMatch = msg.match(/Batch prediction (?:run\s+)?completed for\s+(\d+)\s+rows(?::\s+(.+))?/i);
-  if (batchMatch) {
-    const [, count, breakdown] = batchMatch;
-    let translatedSummary = '';
-    if (breakdown) {
-      const parts = breakdown.split(/\s*\/\s*/);
-      const translatedParts = parts.map((part: string) => {
-        const m = part.trim().match(/^(\d+)\s+(\w+?)(s)?$/i);
-        if (m && m[2]) {
-          const num = m[1];
-          const word = m[2];
-          let singularWord = word;
-          if (word.toLowerCase() === 'graduates') singularWord = 'Graduate';
-          if (word.toLowerCase() === 'enrolled') singularWord = 'Enrolled';
-          if (word.toLowerCase() === 'dropouts' || word.toLowerCase() === 'dropout') singularWord = 'Dropout';
-          return `${num} ${t(`outcomes.${singularWord}`) || word}`;
-        }
-        return part;
-      });
-      translatedSummary = translatedParts.join(' / ');
-    }
-    return t('dashboard.activity.batchMsg', {
-      count,
-      summary: translatedSummary
-    });
-  }
-
   return msg;
 };
 </script>
@@ -94,9 +66,9 @@ const formatEventMessage = (event: any) => {
             class="absolute -left-[22px] top-1 w-2.5 h-2.5 rounded-full border-2 bg-white dark:bg-gray-900
                    transition-colors duration-200 flex-shrink-0"
             :class="[
-              event.type === 'single' && event.riskLevel === 'High'   ? 'border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.12)]' :
-              event.type === 'single' && event.riskLevel === 'Medium' ? 'border-amber-400 shadow-[0_0_0_3px_rgba(245,158,11,0.12)]' :
-              event.type === 'single' && event.riskLevel === 'Low'    ? 'border-emerald-400 shadow-[0_0_0_3px_rgba(16,185,129,0.12)]' :
+              event.riskLevel === 'High'   ? 'border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.12)]' :
+              event.riskLevel === 'Medium' ? 'border-amber-400 shadow-[0_0_0_3px_rgba(245,158,11,0.12)]' :
+              event.riskLevel === 'Low'    ? 'border-emerald-400 shadow-[0_0_0_3px_rgba(16,185,129,0.12)]' :
               'border-primary-400 shadow-[0_0_0_3px_rgba(59,130,246,0.12)]'
             ]"
           ></span>
@@ -105,9 +77,7 @@ const formatEventMessage = (event: any) => {
           <div class="flex flex-col space-y-1 pl-1">
             <div class="flex items-center justify-between">
               <span class="text-[11px] font-bold text-gray-700 dark:text-gray-200">
-                {{ event.type === 'single'
-                   ? t('general.singleEval')
-                   : t('general.batchRun') }}
+                {{ t('general.singleEval') }}
               </span>
               <time class="text-[10px] text-gray-400 dark:text-gray-500 font-semibold ml-3 whitespace-nowrap">
                 {{ formatRelativeTime(event.timestamp) }}

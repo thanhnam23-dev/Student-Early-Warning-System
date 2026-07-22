@@ -21,11 +21,6 @@ const router = createRouter({
           component: () => import('../views/SinglePrediction/index.vue')
         },
         {
-          path: 'batch-prediction',
-          name: 'batch-prediction',
-          component: () => import('../views/BatchPrediction/index.vue')
-        },
-        {
           path: 'prediction-result/:id',
           name: 'prediction-result',
           component: () => import('../views/PredictionResult/index.vue'),

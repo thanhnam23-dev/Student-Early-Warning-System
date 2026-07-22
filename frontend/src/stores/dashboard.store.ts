@@ -65,7 +65,6 @@ export const useDashboardStore = defineStore('dashboard', () => {
 
     // Dynamic stats trackers
     let newSingles = 0;
-    let newBatches = 0;
     let newGraduates = 0;
     let newDropouts = 0;
     let newEnrolled = 0;
@@ -100,50 +99,12 @@ export const useDashboardStore = defineStore('dashboard', () => {
 
         // Set as latest single prediction
         merged.latestSingle = student || null;
-      } else {
-        newBatches += 1;
-        let grads = 0;
-        let drops = 0;
-        let enrolls = 0;
-
-        session.details.forEach((student) => {
-          if (student.prediction === 'Graduate') {
-            newGraduates += 1;
-            grads += 1;
-          } else if (student.prediction === 'Dropout') {
-            newDropouts += 1;
-            drops += 1;
-          } else if (student.prediction === 'Enrolled') {
-            newEnrolled += 1;
-            enrolls += 1;
-          }
-        });
-
-        // Add to activity timeline
-        newActivityEvents.unshift({
-          id: `ACT-${session.id}`,
-          timestamp: session.date,
-          type: 'batch',
-          message: `Batch prediction run completed for ${session.studentCount} students. Result breakdown: ${session.resultSummary}.`
-        });
-
-        // Set as latest batch prediction
-        merged.latestBatch = {
-          id: session.id,
-          date: session.date,
-          total: session.studentCount,
-          graduates: grads,
-          dropouts: drops,
-          enrolled: enrolls,
-          successRate: session.studentCount > 0 ? grads / session.studentCount : 0
-        };
       }
     });
 
     // 1. Merge core stats
     merged.stats.totalPredictions += newTotalPredictedCount;
     merged.stats.singlePredictions += newSingles;
-    merged.stats.batchPredictions += newBatches;
     merged.stats.graduateCount += newGraduates;
     merged.stats.dropoutCount += newDropouts;
     merged.stats.enrolledCount += newEnrolled;

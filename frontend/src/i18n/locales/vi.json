@@ -2,7 +2,6 @@
   "sidebar": {
     "dashboard": "Bảng Điều Khiển",
     "singlePrediction": "Dự Đoán Đơn",
-    "batchPrediction": "Dự Đoán Theo Lô",
     "history": "Lịch Sử Dự Đoán",
     "about": "Giới Thiệu Dự Án",
     "settings": "Cài Đặt",
@@ -44,7 +43,6 @@
     "error": "Lỗi",
     "backToTop": "Lên đầu trang",
     "singleEval": "Đánh giá đơn",
-    "batchRun": "Đánh giá theo lô",
     "viewAll": "Xem Tất Cả",
     "total": "Tổng cộng",
     "students": "sinh viên",
@@ -79,20 +77,11 @@
     "recentPredictions": "Nhật Ký Kiểm Tra Dự Đoán Gần Đây",
     "noActivity": "Chưa có hành động nào được ghi nhận.",
     "latestSingle": "Đánh Giá Đơn Mới Nhất",
-    "latestBatch": "Xử Lý Theo Lô Mới Nhất",
     "reviewReport": "Xem Báo Cáo Đầy Đủ",
-    "inspectBatch": "Kiểm Tra Lịch Sử Lô",
     "noSingle": "Chưa có dự đoán đơn nào được ghi nhận.",
-    "noBatch": "Chưa có dự đoán theo lô nào được ghi nhận.",
-    "batchLog": "Nhật Ký Lô",
     "recentPredictionsTable": "Kiểm Tra Dự Đoán Gần Đây",
-    "importId": "Mã Nhập Khẩu",
-    "shortStudents": "Sinh viên",
-    "shortGraduates": "Tốt nghiệp",
-    "shortDropouts": "Thôi học",
     "activity": {
-      "singleMsg": "Hoàn thành dự đoán đơn cho sinh viên {name}. Kết quả: {outcome} (xác suất {prob}%, Rủi ro: {risk}).",
-      "batchMsg": "Hoàn thành dự đoán theo lô cho {count} sinh viên. Thống kê kết quả: {summary}."
+      "singleMsg": "Hoàn thành dự đoán đơn cho sinh viên {name}. Kết quả: {outcome} (xác suất {prob}%, Rủi ro: {risk})."
     }
   },
   "singlePrediction": {
@@ -205,33 +194,16 @@
       "noEval": "Không Đánh Giá"
     }
   },
-  "batchPrediction": {
-    "title": "Chạy Dự Đoán Theo Lô Spreadsheet",
-    "description": "Phân tích các chỉ số rủi ro cho cả lớp học hoặc khóa học bằng cách nhập bảng tính Excel.",
-    "uploadCard": {
-      "title": "Tải Lên Bảng Tính Quản Trị",
-      "dragDrop": "Kéo thả tệp bảng tính sinh viên vào đây, hoặc click để chọn tệp",
-      "fileFormats": "Hỗ trợ định dạng .xlsx và .xls dung lượng tối đa 1MB.",
-      "downloadTemplate": "Tải Excel Tệp Mẫu"
-    },
-    "processing": "Đang thực hiện tính toán rủi ro trên công cụ AI...",
-    "preview": "Xem Trước Hàng Bảng Tính & Nhập Liệu (Tìm thấy {count} dòng)",
-    "results": "Báo Cáo Tính Toán Theo Lô (Đã xử lý {count} sinh viên)",
-    "exportBtn": "Xuất Báo Cáo Phân Tích Excel",
-    "moreRecords": "Và thêm {count} hồ sơ sinh viên khác..."
-  },
+
   "history": {
     "title": "Nhật Ký & Kiểm Toán Cảnh Báo",
     "description": "Tra cứu lịch sử cảnh báo sinh viên, các đợt chạy tính toán theo lô và các khuyến nghị hỗ trợ.",
     "filters": {
       "searchLabel": "Tìm Kiếm Sinh Viên",
       "searchPlaceholder": "Mã số, họ tên, lớp...",
-      "typeLabel": "Loại Hình Đánh Giá",
       "outcomeLabel": "Nhóm Kết Quả",
       "riskLabel": "Mức Độ Rủi Ro",
-      "allTypes": "Tất Cả Loại Hình",
       "single": "Đánh Giá Đơn",
-      "batch": "Đánh Giá Theo Lô",
       "allOutcomes": "Tất Cả Kết Quả",
       "allRisks": "Tất Cả Mức Độ"
     },
@@ -244,8 +216,7 @@
       "actions": "Thao Tác"
     },
     "empty": "Không Tìm Thấy Nhật Ký Dự Đoán",
-    "emptyDesc": "Thử điều chỉnh bộ lọc hoặc thực hiện dự đoán mới cho sinh viên.",
-    "batchBreakdown": "Chi Tiết Kết Quả Dự Đoán Theo Lô"
+    "emptyDesc": "Thử điều chỉnh bộ lọc hoặc thực hiện dự đoán mới cho sinh viên."
   },
   "about": {
     "title": "Giới Thiệu Dự Án",

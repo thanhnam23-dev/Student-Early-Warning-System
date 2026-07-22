@@ -124,7 +124,7 @@ const handleViewRecord = (id: string) => {
         <p class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3 px-0.5">
           {{ t('dashboard.statsSection') || 'Overview Statistics' }}
         </p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4">
           <StatCard
             class="animate-card-enter stagger-1"
             :title="$t('dashboard.totalPredictions')"
@@ -168,14 +168,6 @@ const handleViewRecord = (id: string) => {
             colorClass="blue"
             shape="circle"
           />
-          <StatCard
-            class="animate-card-enter stagger-6"
-            :title="$t('sidebar.batchPrediction')"
-            :value="data.stats.batchPredictions"
-            icon="fa-solid fa-file-import"
-            colorClass="indigo"
-            shape="square"
-          />
         </div>
       </section>
 
@@ -208,12 +200,12 @@ const handleViewRecord = (id: string) => {
         <p class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3 px-0.5">
           {{ t('dashboard.latestSection') || 'Latest Predictions' }}
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="max-w-2xl">
           <!-- Latest Single -->
           <div class="card overflow-hidden animate-card-enter stagger-6">
             <div class="flex items-center space-x-2 px-5 py-4 border-b border-gray-100 dark:border-gray-800/60">
               <i class="fa-solid fa-user-graduate text-primary-500 text-xs"></i>
-              <h4 class="text-sm font-bold text-gray-880 dark:text-gray-100 tracking-tight">
+              <h4 class="text-sm font-bold text-gray-800 dark:text-gray-100 tracking-tight">
                 {{ $t('dashboard.latestSingle') }}
               </h4>
             </div>
@@ -272,77 +264,6 @@ const handleViewRecord = (id: string) => {
               <div v-else class="py-10 text-center">
                 <i class="fa-solid fa-inbox text-2xl text-gray-300 dark:text-gray-600 mb-2 block animate-pulse"></i>
                 <span class="text-xs font-semibold text-gray-400">{{ $t('dashboard.noSingle') }}</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Latest Batch -->
-          <div class="card overflow-hidden animate-card-enter stagger-6">
-            <div class="flex items-center space-x-2 px-5 py-4 border-b border-gray-100 dark:border-gray-800/60">
-              <i class="fa-solid fa-file-excel text-primary-500 text-xs"></i>
-              <h4 class="text-sm font-bold text-gray-880 dark:text-gray-100 tracking-tight">
-                {{ $t('dashboard.latestBatch') }}
-              </h4>
-            </div>
-            <div class="p-5">
-              <div v-if="data.latestBatch" class="space-y-4">
-                <div class="flex items-start justify-between gap-3">
-                  <div class="min-w-0">
-                    <h5 class="text-sm font-black text-gray-900 dark:text-white leading-tight">
-                      {{ $t('dashboard.importId') }}: {{ data.latestBatch.id }}
-                    </h5>
-                    <span class="text-[10px] text-gray-400 font-bold block mt-0.5">
-                      {{ formatDate(data.latestBatch.date) }}
-                    </span>
-                  </div>
-                  <span class="px-2 py-1 rounded-lg text-[10px] font-bold
-                               bg-primary-50 text-primary-600 border border-primary-100/50
-                               dark:bg-primary-950/20 dark:text-primary-400 dark:border-primary-900/60 flex-shrink-0">
-                    {{ $t('history.filters.batch') }}
-                  </span>
-                </div>
-
-                <div class="grid grid-cols-3 gap-2 p-3 bg-gray-50 dark:bg-gray-800/40 rounded-xl
-                            border border-gray-150 dark:border-gray-800 text-center">
-                  <div>
-                    <span class="block text-[9px] text-gray-400 uppercase font-bold tracking-wider mb-0.5">
-                      {{ $t('dashboard.shortStudents') }}
-                    </span>
-                    <span class="text-xs font-bold text-gray-800 dark:text-gray-200 tabular-nums">
-                    {{ data.latestBatch.total }}
-                    </span>
-                  </div>
-                  <div>
-                    <span class="block text-[9px] text-gray-400 uppercase font-bold tracking-wider mb-0.5">
-                      {{ $t('dashboard.shortGraduates') }}
-                    </span>
-                    <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 tabular-nums">
-                    {{ data.latestBatch.graduates }}
-                    </span>
-                  </div>
-                  <div>
-                    <span class="block text-[9px] text-gray-400 uppercase font-bold tracking-wider mb-0.5">
-                      {{ $t('dashboard.shortDropouts') }}
-                    </span>
-                    <span class="text-xs font-bold text-red-500 dark:text-red-400 tabular-nums">
-                    {{ data.latestBatch.dropouts }}
-                    </span>
-                  </div>
-                </div>
-
-                <button
-                  @click="handleViewRecord(data.latestBatch.id)"
-                  class="w-full py-2 rounded-xl text-xs font-bold cursor-pointer transition-all duration-200
-                         bg-primary-50 hover:bg-primary-100 text-primary-600
-                         dark:bg-primary-950/20 dark:hover:bg-primary-900/30 dark:text-primary-400
-                         border border-primary-100 dark:border-primary-900"
-                >
-                  {{ $t('dashboard.reviewReport') }}
-                </button>
-              </div>
-              <div v-else class="py-10 text-center">
-                <i class="fa-solid fa-inbox text-2xl text-gray-300 dark:text-gray-600 mb-2 block animate-pulse"></i>
-                <span class="text-xs font-semibold text-gray-400">{{ $t('dashboard.noBatch') }}</span>
               </div>
             </div>
           </div>

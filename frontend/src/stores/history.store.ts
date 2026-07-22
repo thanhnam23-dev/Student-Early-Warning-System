@@ -9,9 +9,8 @@ export const useHistoryStore = defineStore('history', () => {
   const loading = ref(false);
   const activeRecord = ref<StudentPredictionResult | null>(null);
   
-  const filters = ref<HistoryFilter>({
+  const filters = ref<Omit<HistoryFilter, 'type'>>({
     search: '',
-    type: 'all',
     prediction: 'all',
     riskLevel: 'all'
   });
@@ -73,12 +72,7 @@ export const useHistoryStore = defineStore('history', () => {
    */
   const filteredHistory = computed(() => {
     return historyList.value.filter((session) => {
-      // 1. Filter by Prediction Type (Single / Batch)
-      if (filters.value.type !== 'all' && session.type !== filters.value.type) {
-        return false;
-      }
-
-      // 2. Check if any student details within this session match the search queries
+      // 1. Check if any student details within this session match the search queries
       const matchesSearch = session.details.some((student) => {
         const query = filters.value.search.toLowerCase().trim();
         if (!query) return true;
@@ -93,7 +87,7 @@ export const useHistoryStore = defineStore('history', () => {
 
       if (!matchesSearch) return false;
 
-      // 3. Filter by Prediction Outcome (Graduate / Dropout / Enrolled)
+      // 2. Filter by Prediction Outcome (Graduate / Dropout / Enrolled)
       if (filters.value.prediction !== 'all') {
         const matchesPrediction = session.details.some(
           (student) => student.prediction === filters.value.prediction
@@ -101,7 +95,7 @@ export const useHistoryStore = defineStore('history', () => {
         if (!matchesPrediction) return false;
       }
 
-      // 4. Filter by Risk Level (Low / Medium / High)
+      // 3. Filter by Risk Level (Low / Medium / High)
       if (filters.value.riskLevel !== 'all') {
         const matchesRisk = session.details.some(
           (student) => student.riskLevel === filters.value.riskLevel
@@ -116,7 +110,6 @@ export const useHistoryStore = defineStore('history', () => {
   const resetFilters = () => {
     filters.value = {
       search: '',
-      type: 'all',
       prediction: 'all',
       riskLevel: 'all'
     };

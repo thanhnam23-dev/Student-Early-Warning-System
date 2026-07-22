@@ -112,24 +112,5 @@ export const predictionService = {
     };
 
     return result;
-  },
-
-  /**
-   * Simulates an API call to predict status for a batch of students.
-   */
-  async predictBatch(inputs: StudentPredictionInput[]): Promise<StudentPredictionResult[]> {
-    await delay(1200); // Higher delay for batch processing
-    
-    // Predict each student using the single prediction logic
-    const results = await Promise.all(
-      inputs.map(async (input, index) => {
-        const res = await this.predictSingle(input);
-        // Ensure unique IDs
-        res.id = `RES-${Date.now()}-${index}`;
-        return res;
-      })
-    );
-
-    return results;
   }
 };

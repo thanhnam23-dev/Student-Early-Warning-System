@@ -2,7 +2,6 @@
   "sidebar": {
     "dashboard": "Dashboard",
     "singlePrediction": "Single Prediction",
-    "batchPrediction": "Batch Prediction",
     "history": "Prediction History",
     "about": "About the Project",
     "settings": "Settings",
@@ -44,7 +43,6 @@
     "error": "Error",
     "backToTop": "Back to top",
     "singleEval": "Single Evaluation",
-    "batchRun": "Batch Run",
     "viewAll": "View All",
     "total": "Total",
     "students": "students",
@@ -79,20 +77,11 @@
     "recentPredictions": "Recent Prediction Audits",
     "noActivity": "No actions have been logged yet.",
     "latestSingle": "Latest Single Evaluation",
-    "latestBatch": "Latest Batch Process",
     "reviewReport": "Review Full Report",
-    "inspectBatch": "Inspect Batch History",
     "noSingle": "No single student predictions logged yet.",
-    "noBatch": "No batch runs loaded yet.",
-    "batchLog": "Batch Log",
     "recentPredictionsTable": "Recent Student Predictions",
-    "importId": "Import ID",
-    "shortStudents": "Students",
-    "shortGraduates": "Graduates",
-    "shortDropouts": "Dropouts",
     "activity": {
-      "singleMsg": "Single prediction run completed for student {name}. Outcome: {outcome} ({prob}% probability, Risk: {risk}).",
-      "batchMsg": "Batch prediction run completed for {count} students. Result breakdown: {summary}."
+      "singleMsg": "Single prediction run completed for student {name}. Outcome: {outcome} ({prob}% probability, Risk: {risk})."
     }
   },
   "singlePrediction": {
@@ -205,33 +194,16 @@
       "noEval": "No Eval"
     }
   },
-  "batchPrediction": {
-    "title": "Spreadsheet Batch Processor",
-    "description": "Analyze warning indicators for entire classes or cohorts by uploading Excel spreadsheets.",
-    "uploadCard": {
-      "title": "Upload Administrative Spreadsheet",
-      "dragDrop": "Drag and drop student spreadsheet here, or click to browse",
-      "fileFormats": "Supports .xlsx and .xls formats up to 1MB.",
-      "downloadTemplate": "Download Template Excel"
-    },
-    "processing": "Executing batch calculations on AI engine...",
-    "preview": "Spreadsheet Preview & Data Import ({count} rows found)",
-    "results": "Batch Calculation Report ({count} predictions processed)",
-    "exportBtn": "Export Analytical Spreadsheet",
-    "moreRecords": "And {count} more student records..."
-  },
+
   "history": {
     "title": "Prediction Audits & Log",
     "description": "Inspect logs of past student warnings, batch spreadsheet calculations, and recommendations.",
     "filters": {
       "searchLabel": "Search Student",
       "searchPlaceholder": "Code, name, class...",
-      "typeLabel": "Prediction Type",
       "outcomeLabel": "Output Category",
       "riskLabel": "Risk Level",
-      "allTypes": "All Types",
       "single": "Single Prediction",
-      "batch": "Batch Prediction",
       "allOutcomes": "All Outcomes",
       "allRisks": "All Risks"
     },
@@ -244,8 +216,7 @@
       "actions": "Actions"
     },
     "empty": "No Prediction Logs Found",
-    "emptyDesc": "Try adjusting your filter options or run new student predictions.",
-    "batchBreakdown": "Batch Members Prediction Breakdown"
+    "emptyDesc": "Try adjusting your filter options or run new student predictions."
   },
   "about": {
     "title": "About the Project",

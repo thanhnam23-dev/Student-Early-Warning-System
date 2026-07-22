@@ -135,10 +135,10 @@ const handlePredict = async (studentData: StudentPredictionInput) => {
       :student-input="activeInput"
     />
 
-    <!-- Processing Overlay fallback (for background/batch predictions) -->
+    <!-- Processing Overlay fallback -->
     <LoadingOverlay 
       :visible="loading && !isAnalyzing" 
-      :message="$t('batchPrediction.processing')"
+      :message="$t('general.processingRequest')"
     />
   </div>
 </template>

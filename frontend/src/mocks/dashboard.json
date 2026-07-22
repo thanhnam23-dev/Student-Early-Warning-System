@@ -1,16 +1,15 @@
 {
   "stats": {
-    "totalPredictions": 142,
+    "totalPredictions": 42,
     "singlePredictions": 42,
-    "batchPredictions": 100,
-    "graduateCount": 85,
-    "dropoutCount": 35,
-    "enrolledCount": 22
+    "graduateCount": 25,
+    "dropoutCount": 10,
+    "enrolledCount": 7
   },
   "distribution": [
-    { "label": "Graduate", "value": 85 },
-    { "label": "Dropout", "value": 35 },
-    { "label": "Enrolled", "value": 22 }
+    { "label": "Graduate", "value": 25 },
+    { "label": "Dropout", "value": 10 },
+    { "label": "Enrolled", "value": 7 }
   ],
   "history": [
     { "label": "Jan", "value": 15 },
