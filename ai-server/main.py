@@ -196,6 +196,67 @@ RECOMMENDATIONS_DB = {
     ]
 }
 
+def generate_dynamic_recommendations(prediction: str, shap_list: List[Dict[str, Any]]) -> List[str]:
+    # Lấy danh sách khuyến nghị cơ sở cho lớp dự đoán
+    base_recs = RECOMMENDATIONS_DB.get(prediction, []).copy()
+    
+    # Nếu kết quả là Graduate (Tốt nghiệp - rủi ro thấp) thì không cần khuyến nghị cảnh báo
+    if prediction == "Graduate":
+        return base_recs
+        
+    # Lọc ra các yếu tố làm tăng nguy cơ bỏ học (positive impact trong SHAP)
+    risk_factors = [item for item in shap_list if item["type"] == "positive"]
+    
+    # Kiểm tra xem có yếu tố rủi ro tài chính nào làm tăng nguy cơ không
+    has_financial_risk = any(item["feature"] in ["Tuition fees up to date", "Debtor", "Financial_Risk"] and item["type"] == "positive" for item in shap_list)
+    
+    # Nếu sinh viên không có rủi ro tài chính (hoặc đóng học phí đầy đủ, biểu thị bằng SHAP âm)
+    # Ta sẽ xóa các khuyến nghị liên quan đến học phí và nợ nần khỏi danh sách cơ sở
+    if not has_financial_risk:
+        base_recs = [rec for rec in base_recs if "tài chính" not in rec.lower() and "học phí" not in rec.lower()]
+        
+    if not risk_factors:
+        return base_recs[:5]
+        
+    # Lấy yếu tố rủi ro hàng đầu (tác động lớn nhất)
+    top_risk = risk_factors[0]
+    top_feature = top_risk["feature"]
+    
+    dynamic_recs = []
+    
+    # Phân loại nguyên nhân dựa trên tên đặc trưng SHAP hàng đầu
+    # 1. Rủi ro về Tài chính (Chưa đóng học phí hoặc nợ nần)
+    if top_feature in ["Tuition fees up to date", "Debtor", "Financial_Risk"]:
+        dynamic_recs.append("🔴 KHUYẾN NGHỊ KHẨN CẤP (TÀI CHÍNH): Mô hình phát hiện nguyên nhân rủi ro hàng đầu là do sinh viên chậm nộp học phí hoặc đang nợ học phí học tập. Đề xuất: Sinh viên cần liên hệ ngay với Phòng Kế hoạch Tài chính để làm thủ tục giãn nợ, trả góp học phí học tập, hoặc đăng ký nhận gói hỗ trợ tín dụng học tập khó khăn từ nhà trường.")
+        
+    # 2. Rủi ro về Học lực yếu (Tỷ lệ đỗ môn thấp hoặc trượt nhiều môn)
+    elif "Approved" in top_feature or "Ratio" in top_feature or "Grade" in top_feature or "Without" in top_feature:
+        dynamic_recs.append("🔴 KHUYẾN NGHỊ KHẨN CẤP (HỌC THUẬT): Mô hình phát hiện nguyên nhân rủi ro chính đến từ kết quả học tập yếu kém (tỷ lệ trượt môn cao hoặc điểm trung bình học kỳ thấp). Đề xuất: Sinh viên cần đặt lịch hẹn khẩn cấp với Cố vấn học tập để rà soát chương trình học, đăng ký tham gia lớp phụ đạo (Peer-tutoring) và xem xét giảm tải số lượng tín chỉ đăng ký kỳ sau để tránh áp lực học tập quá tải.")
+        
+    # 3. Điểm đầu vào thấp (Nền tảng học vấn yếu)
+    elif "admissionGrade" in top_feature or "Previous qualification (grade)" in top_feature:
+        dynamic_recs.append("🔴 KHUYẾN NGHỊ KHẨN CẤP (NỀN TẢNG): Điểm xét tuyển đại học hoặc điểm học lực cấp 3 của sinh viên thấp hơn mức trung bình của ngành học. Đề xuất: Cố vấn học tập cần định hướng sinh viên tham gia các lớp học bổ trợ kiến thức đại cương bắt buộc và kết nối đội nhóm bạn cùng tiến để nhanh chóng làm quen với phương pháp học đại học.")
+        
+    # 4. Mất học bổng
+    elif top_feature == "Scholarship holder":
+        dynamic_recs.append("🔴 KHUYẾN NGHỊ KHẨN CẤP (HỌC BỔNG): Sinh viên bị mất học bổng hoặc không duy trì được điều kiện nhận học bổng làm tăng áp lực kinh tế. Đề xuất: Sinh viên cần gặp phòng Công tác sinh viên để tìm kiếm các học bổng tài trợ xã hội khác hoặc đăng ký các công việc bán thời gian (part-time) trong khuôn viên trường.")
+        
+    # 5. Khó khăn hòa nhập (Sinh viên xa nhà)
+    elif top_feature == "Displaced":
+        dynamic_recs.append("🔴 KHUYẾN NGHỊ KHẨN CẤP (HÒA NHẬP): Sinh viên thuộc diện đi học xa nhà, đang gặp khó khăn về chỗ ở và tâm lý hòa nhập. Đề xuất: Sinh viên cần đăng ký ở Ký túc xá nhà trường để đảm bảo an ninh, đồng thời liên hệ Đoàn thanh niên/Hội sinh viên để tham gia các câu lạc bộ ngoại khóa hỗ trợ tinh thần.")
+
+    # Điền thêm các khuyến nghị cơ sở để đảm bảo đủ 4-5 lời khuyên, tránh trùng lặp
+    for rec in base_recs:
+        if rec not in dynamic_recs and len(dynamic_recs) < 5:
+            # Loại bỏ các khuyến nghị cơ sở có nội dung trùng lặp với khuyến nghị khẩn cấp
+            if "tài chính" in rec.lower() and any("tài chính" in r.lower() for r in dynamic_recs):
+                continue
+            if "phụ đạo" in rec.lower() and any("học thuật" in r.lower() for r in dynamic_recs):
+                continue
+            dynamic_recs.append(rec)
+            
+    return dynamic_recs
+
 # ----------------------------------------------------------------------
 # 3. Quản lý vòng đời ứng dụng (Lifespan Context Manager)
 # ----------------------------------------------------------------------
@@ -339,8 +400,6 @@ def run_predictions(X_processed, feature_names) -> dict:
         risk_level = "Low"
         confidence = 1.0 - prob_dropout
         
-    recommendations = RECOMMENDATIONS_DB[prediction]
-    
     # SHAP Explainability
     explainer = models_state["shap_explainer"]
     shap_vals = explainer.shap_values(X_processed)
@@ -362,6 +421,9 @@ def run_predictions(X_processed, feature_names) -> dict:
             })
             
     shap_list = sorted(shap_list, key=lambda x: abs(x["impact"]), reverse=True)[:8]
+    
+    # Sinh khuyến nghị động cá nhân hóa dựa trên nguyên nhân rủi ro hàng đầu từ SHAP
+    recommendations = generate_dynamic_recommendations(prediction, shap_list)
     
     return {
         "prediction": prediction,

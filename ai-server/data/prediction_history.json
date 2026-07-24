@@ -1,5 +1,352 @@
 [
   {
+    "id": "PR-1784903244448",
+    "date": "2026-07-24T14:27:24.435964Z",
+    "type": "single",
+    "studentCount": 1,
+    "resultSummary": "1 Dropout (High Risk)",
+    "details": [
+      {
+        "id": "RES-1784903244",
+        "date": "2026-07-24T14:27:24.435964Z",
+        "studentCode": "2255010111",
+        "studentName": "Nguyễn Long",
+        "className": "22CN5",
+        "faculty": "Công nghệ thông tin",
+        "prediction": "Dropout",
+        "probability": 0.9669624436558332,
+        "confidence": 0.9669624436558332,
+        "riskLevel": "High",
+        "recommendations": [
+          "🔴 KHUYẾN NGHỊ KHẨN CẤP (HỌC THUẬT): Mô hình phát hiện nguyên nhân rủi ro chính đến từ kết quả học tập yếu kém (tỷ lệ trượt môn cao hoặc điểm trung bình học kỳ thấp). Đề xuất: Sinh viên cần đặt lịch hẹn khẩn cấp với Cố vấn học tập để rà soát chương trình học, đăng ký tham gia lớp phụ đạo (Peer-tutoring) và xem xét giảm tải số lượng tín chỉ đăng ký kỳ sau để tránh áp lực học tập quá tải.",
+          "Liên hệ khẩn cấp với cố vấn học tập hoặc văn phòng hỗ trợ sinh viên của Khoa.",
+          "Xem xét chuyển sang hệ vừa học vừa làm (lớp tối) để cân bằng thời gian cá nhân.",
+          "Chủ động giảm tải số lượng tín chỉ đăng ký ở kỳ sau để tránh áp lực học tập quá tải."
+        ],
+        "shapValues": [
+          {
+            "feature": "Sem2_Approved_Ratio",
+            "impact": 1.205551661274097,
+            "type": "positive"
+          },
+          {
+            "feature": "Sem1_Approved_Ratio",
+            "impact": 0.9535422760122914,
+            "type": "positive"
+          },
+          {
+            "feature": "Course_9119",
+            "impact": 0.6198714317803954,
+            "type": "positive"
+          },
+          {
+            "feature": "Financial_Risk",
+            "impact": -0.28949234903934595,
+            "type": "negative"
+          },
+          {
+            "feature": "Tuition fees up to date",
+            "impact": -0.2825188617204188,
+            "type": "negative"
+          },
+          {
+            "feature": "Curricular units 2nd sem (approved)",
+            "impact": 0.2353527256778706,
+            "type": "positive"
+          },
+          {
+            "feature": "Application mode_1",
+            "impact": -0.22229735658756988,
+            "type": "negative"
+          },
+          {
+            "feature": "Scholarship holder",
+            "impact": 0.21709852356386752,
+            "type": "positive"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PR-1784901952853",
+    "date": "2026-07-24T14:05:52.846788Z",
+    "type": "single",
+    "studentCount": 1,
+    "resultSummary": "1 Dropout (High Risk)",
+    "details": [
+      {
+        "id": "RES-1784901952",
+        "date": "2026-07-24T14:05:52.846788Z",
+        "studentCode": "2255010111",
+        "studentName": "Nguyễn Long",
+        "className": "22CN5",
+        "faculty": "Công nghệ thông tin",
+        "prediction": "Dropout",
+        "probability": 0.8972334113318949,
+        "confidence": 0.8972334113318949,
+        "riskLevel": "High",
+        "recommendations": [
+          "🔴 KHUYẾN NGHỊ KHẨN CẤP (HỌC THUẬT): Mô hình phát hiện nguyên nhân rủi ro chính đến từ kết quả học tập yếu kém (tỷ lệ trượt môn cao hoặc điểm trung bình học kỳ thấp). Đề xuất: Sinh viên cần đặt lịch hẹn khẩn cấp với Cố vấn học tập để rà soát chương trình học, đăng ký tham gia lớp phụ đạo (Peer-tutoring) và xem xét giảm tải số lượng tín chỉ đăng ký kỳ sau để tránh áp lực học tập quá tải.",
+          "Liên hệ khẩn cấp với cố vấn học tập hoặc văn phòng hỗ trợ sinh viên của Khoa.",
+          "Liên hệ phòng kế hoạch tài chính để nhận hỗ trợ trả góp học phí hoặc giãn nợ học phí.",
+          "Xem xét chuyển sang hệ vừa học vừa làm (lớp tối) để cân bằng thời gian cá nhân.",
+          "Chủ động giảm tải số lượng tín chỉ đăng ký ở kỳ sau để tránh áp lực học tập quá tải."
+        ],
+        "shapValues": [
+          {
+            "feature": "Sem2_Approved_Ratio",
+            "impact": 1.1693853193518395,
+            "type": "positive"
+          },
+          {
+            "feature": "Sem1_Approved_Ratio",
+            "impact": 0.9170138841075552,
+            "type": "positive"
+          },
+          {
+            "feature": "Financial_Risk",
+            "impact": -0.29217976664738865,
+            "type": "negative"
+          },
+          {
+            "feature": "Tuition fees up to date",
+            "impact": -0.28381727783942495,
+            "type": "negative"
+          },
+          {
+            "feature": "Application mode_1",
+            "impact": -0.23239255731453426,
+            "type": "negative"
+          },
+          {
+            "feature": "Curricular units 2nd sem (grade)",
+            "impact": 0.2293989819428791,
+            "type": "positive"
+          },
+          {
+            "feature": "Admission grade",
+            "impact": -0.22390390598144613,
+            "type": "negative"
+          },
+          {
+            "feature": "Scholarship holder",
+            "impact": 0.18179446379633746,
+            "type": "positive"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PR-1784901924853",
+    "date": "2026-07-24T14:05:24.849401Z",
+    "type": "single",
+    "studentCount": 1,
+    "resultSummary": "1 Dropout (High Risk)",
+    "details": [
+      {
+        "id": "RES-1784901924",
+        "date": "2026-07-24T14:05:24.849401Z",
+        "studentCode": "2255010111",
+        "studentName": "Nguyễn Long",
+        "className": "22CN5",
+        "faculty": "Công nghệ thông tin",
+        "prediction": "Dropout",
+        "probability": 0.8972334113318949,
+        "confidence": 0.8972334113318949,
+        "riskLevel": "High",
+        "recommendations": [
+          "🔴 KHUYẾN NGHỊ KHẨN CẤP (HỌC THUẬT): Mô hình phát hiện nguyên nhân rủi ro chính đến từ kết quả học tập yếu kém (tỷ lệ trượt môn cao hoặc điểm trung bình học kỳ thấp). Đề xuất: Sinh viên cần đặt lịch hẹn khẩn cấp với Cố vấn học tập để rà soát chương trình học, đăng ký tham gia lớp phụ đạo (Peer-tutoring) và xem xét giảm tải số lượng tín chỉ đăng ký kỳ sau để tránh áp lực học tập quá tải.",
+          "Liên hệ khẩn cấp với cố vấn học tập hoặc văn phòng hỗ trợ sinh viên của Khoa.",
+          "Liên hệ phòng kế hoạch tài chính để nhận hỗ trợ trả góp học phí hoặc giãn nợ học phí.",
+          "Xem xét chuyển sang hệ vừa học vừa làm (lớp tối) để cân bằng thời gian cá nhân.",
+          "Chủ động giảm tải số lượng tín chỉ đăng ký ở kỳ sau để tránh áp lực học tập quá tải."
+        ],
+        "shapValues": [
+          {
+            "feature": "Sem2_Approved_Ratio",
+            "impact": 1.1693853193518395,
+            "type": "positive"
+          },
+          {
+            "feature": "Sem1_Approved_Ratio",
+            "impact": 0.9170138841075552,
+            "type": "positive"
+          },
+          {
+            "feature": "Financial_Risk",
+            "impact": -0.29217976664738865,
+            "type": "negative"
+          },
+          {
+            "feature": "Tuition fees up to date",
+            "impact": -0.28381727783942495,
+            "type": "negative"
+          },
+          {
+            "feature": "Application mode_1",
+            "impact": -0.23239255731453426,
+            "type": "negative"
+          },
+          {
+            "feature": "Curricular units 2nd sem (grade)",
+            "impact": 0.2293989819428791,
+            "type": "positive"
+          },
+          {
+            "feature": "Admission grade",
+            "impact": -0.22390390598144613,
+            "type": "negative"
+          },
+          {
+            "feature": "Scholarship holder",
+            "impact": 0.18179446379633746,
+            "type": "positive"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PR-1784901814560",
+    "date": "2026-07-24T14:03:34.551486Z",
+    "type": "single",
+    "studentCount": 1,
+    "resultSummary": "1 Graduate (Low Risk)",
+    "details": [
+      {
+        "id": "RES-1784901814",
+        "date": "2026-07-24T14:03:34.551486Z",
+        "studentCode": "2255010110",
+        "studentName": "Minh An",
+        "className": "22CN5",
+        "faculty": "Công nghệ thông tin",
+        "prediction": "Graduate",
+        "probability": 0.05613951497705534,
+        "confidence": 0.9438604850229446,
+        "riskLevel": "Low",
+        "recommendations": [
+          "Tiếp tục duy trì kết quả học tập xuất sắc và tỷ lệ chuyên cần hiện tại.",
+          "Xem xét đăng ký làm gia sư hoặc người hướng dẫn học tập (Peer Mentor) cho khóa dưới.",
+          "Tham gia các hoạt động nghiên cứu khoa học sinh viên hoặc đồ án danh dự.",
+          "Tham gia các chương trình tư vấn hướng nghiệp và ngày hội thực tập của khoa."
+        ],
+        "shapValues": [
+          {
+            "feature": "Sem2_Approved_Ratio",
+            "impact": -1.1091650692668693,
+            "type": "negative"
+          },
+          {
+            "feature": "Sem1_Approved_Ratio",
+            "impact": -0.6566581357904605,
+            "type": "negative"
+          },
+          {
+            "feature": "Scholarship holder",
+            "impact": -0.5611895845741115,
+            "type": "negative"
+          },
+          {
+            "feature": "Curricular units 2nd sem (approved)",
+            "impact": -0.5143643684421213,
+            "type": "negative"
+          },
+          {
+            "feature": "GDP",
+            "impact": 0.20984918583935264,
+            "type": "positive"
+          },
+          {
+            "feature": "Curricular units 1st sem (grade)",
+            "impact": -0.20809106778348033,
+            "type": "negative"
+          },
+          {
+            "feature": "Tuition fees up to date",
+            "impact": -0.2064417253071003,
+            "type": "negative"
+          },
+          {
+            "feature": "Previous qualification (grade)",
+            "impact": -0.17740724439308592,
+            "type": "negative"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PR-1784901700378",
+    "date": "2026-07-24T14:01:40.360754Z",
+    "type": "single",
+    "studentCount": 1,
+    "resultSummary": "1 Graduate (Low Risk)",
+    "details": [
+      {
+        "id": "RES-1784901700",
+        "date": "2026-07-24T14:01:40.360754Z",
+        "studentCode": "2255010110",
+        "studentName": "Minh An",
+        "className": "22CN5",
+        "faculty": "Công nghệ thông tin",
+        "prediction": "Graduate",
+        "probability": 0.05613951497705534,
+        "confidence": 0.9438604850229446,
+        "riskLevel": "Low",
+        "recommendations": [
+          "Tiếp tục duy trì kết quả học tập xuất sắc và tỷ lệ chuyên cần hiện tại.",
+          "Xem xét đăng ký làm gia sư hoặc người hướng dẫn học tập (Peer Mentor) cho khóa dưới.",
+          "Tham gia các hoạt động nghiên cứu khoa học sinh viên hoặc đồ án danh dự.",
+          "Tham gia các chương trình tư vấn hướng nghiệp và ngày hội thực tập của khoa."
+        ],
+        "shapValues": [
+          {
+            "feature": "Sem2_Approved_Ratio",
+            "impact": -1.1091650692668693,
+            "type": "negative"
+          },
+          {
+            "feature": "Sem1_Approved_Ratio",
+            "impact": -0.6566581357904605,
+            "type": "negative"
+          },
+          {
+            "feature": "Scholarship holder",
+            "impact": -0.5611895845741115,
+            "type": "negative"
+          },
+          {
+            "feature": "Curricular units 2nd sem (approved)",
+            "impact": -0.5143643684421213,
+            "type": "negative"
+          },
+          {
+            "feature": "GDP",
+            "impact": 0.20984918583935264,
+            "type": "positive"
+          },
+          {
+            "feature": "Curricular units 1st sem (grade)",
+            "impact": -0.20809106778348033,
+            "type": "negative"
+          },
+          {
+            "feature": "Tuition fees up to date",
+            "impact": -0.2064417253071003,
+            "type": "negative"
+          },
+          {
+            "feature": "Previous qualification (grade)",
+            "impact": -0.17740724439308592,
+            "type": "negative"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "PR-1784727252208",
     "date": "2026-07-22T13:34:12.197003Z",
     "type": "single",
